@@ -10,7 +10,39 @@
         <li> <a href="<?php echo base_url('admin') ?>">  <i class="fa fa-home"></i> <span>Home</span> </a>  </li>
          <li class="treeview"><a href="<?php echo base_url('admin') ?>"><i class="fa fa-calendar-o"></i><span>Academics</span></a></li>
         <li class="treeview"><a href="/admission/default/index"><i class="fa fa-user-plus"></i><span>Admission</span></a></li>
-        <li class="treeview"><a href="/student/default/index"><i class="fa fa-users"></i><span>Student</span></a></li>
+        <li class="treeview"><a href="/student/default/index"><i class="fa fa-users"></i><span>Student</span></a>
+        <ul class="treeview-menu" style="display: block;">
+
+              <li>
+    <a href="/EduSec/index.php?r=student%2Fstu-master%2Fcreate" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Add Student</a>     </li>
+   
+
+        <li>
+    <a href="/EduSec/index.php?r=student%2Fstu-master%2Findex" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Manage Students</a>      </li>
+   
+
+              <li>
+    <a href="/EduSec/index.php?r=student%2Fstu-status%2Findex" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Student Status</a>     </li>
+   
+  
+              <li>
+    <a href="/EduSec/index.php?r=student%2Fstu-import%2Findex" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Import Student</a>     </li>
+   
+
+              <li>
+    <a href="/EduSec/index.php?r=student%2Fstu-category%2Findex" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Admission Category</a>     </li>
+   
+
+        <li>
+    <a href="/EduSec/index.php?r=user%2Fresetstudloginid" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Reset Login</a>     </li>
+   
+
+              <li>
+    <a href="/EduSec/index.php?r=user%2Fresetstudpassword" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Reset Password</a>     </li>
+   
+  
+        </ul>
+        </li>
         <li class="treeview"><a href="/fees/default/index"><i class="fa fa-money"></i><span>Fees</span></a></li>
         <li class="treeview"><a href="/userManage/default/index"><i class="fa fa-user-secret"></i><span>User Management</span></a></li>
         <li class="treeview"><a href="/report/default/index"><i class="fa fa-line-chart"></i><span>Reports Center</span></a></li>
