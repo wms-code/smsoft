@@ -7,65 +7,98 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li> <a href="<?php echo base_url('admin') ?>">  <i class="fa fa-home"></i> <span>Home</span> </a>  </li>
-
-        <li class="treeview"><a href="/admission/default/index"><i class="fa fa-user-plus"></i><span>Admission</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('admin') ?>"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i> Massage Of The Day</a></li>
+            <li><a href="#"><i class="fa fa-bell"></i> Notice</a></li>
+            <li><a href="#"><i class="fa fa-calendar"></i> Events</a></li>
+        </ul>
+        </li>
           <li class="treeview">
           <a href="#">
             <i class="fa fa-graduation-cap"></i> <span>Course Management</span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Course</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Batch</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Section</a></li>
- 
+            <li><a href="#"><i class="fa fa-book"></i>  Course</a></li>
+            <li><a href="#"><i class="fa fa-object-group"></i>  Batch</a></li>
+            <li><a href="#"><i class="fa fa-sitemap"></i>  Section</a></li>
         </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-graduation-cap"></i> <span>Student</span>
+            <i class="fa fa-users"></i> <span>Student Management</span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Add Student</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Manage Students</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Student Status</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Import Student</a></li> 
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Admission Category</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Reset Login</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Reset Password</a></li>
-   
-  
+            <li><a href="#"><i class="fa fa-user-plus"></i>  Add Student</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>  Manage Students</a></li>
+            <li><a href="#"><i class="fa fa-info-circle"></i>  Student Status</a></li>
+            <li><a href="#"><i class="fa fa-upload"></i>  Import Student</a></li> 
+            <li><a href="#"><i class="fa fa-wrench"></i>  Admission Category</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"></i>  Reset Login</a></li>
+            <li><a href="#"><i class="fa fa-refresh"></i>  Reset Password</a></li> 
         </ul>
         </li>
-        <li class="treeview"><a href="/fees/default/index"><i class="fa fa-money"></i><span>Fees</span></a></li>
-        <li class="treeview"><a href="/userManage/default/index"><i class="fa fa-user-secret"></i><span>User Management</span></a></li>
-        <li class="treeview"><a href="/report/default/index"><i class="fa fa-line-chart"></i><span>Reports Center</span></a></li>
-        <li class="treeview"><a href="/library/default/index"><i class="fa fa-university"></i><span>Library</span></a></li>
-        <li class="treeview"><a href="/administration/default/index"><i class="fa fa-wrench"></i><span>Administration</span></a></li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Pages</span>
+            <i class="fa fa-user"></i> <span>Employee</span>
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="../examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="../examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="../examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="../examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="../examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="../examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="../examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-          </ul>
+            <li><a href="#"><i class="fa fa fa-user-plus"></i>Add Employee</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Manage Employee</a></li>
+            <li><a href="#"><i class="fa fa-th-list"></i>Department</a></li>
+            <li><a href="#"><i class="fa fa-user-secret"></i>Designation</a></li> 
+            <li><a href="#"><i class="fa fa-th"></i> Category</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"></i>Reset Login</a></li>
+            <li><a href="#"><i class="fa fa-refresh"></i>Reset Password</a></li>   
+        </ul>
         </li>
-        
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-money"></i> <span>Fees</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-university"></i>Bank Master</a></li>
+            <li><a href="#"><i class="fa fa-cog"></i>Fees Category</a></li>
+            <li><a href="#"><i class="fa fa-money"></i>Fees Collection</a></li> 
+        </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i> <span>Reports Center</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-info"></i>Employee Info Report</a></li>
+            <li><a href="#"><i class="fa fa-info"></i>Student Info Report</a></li>
+            <li><a href="#"><i class="fa fa-history"></i>Login History</a></li>
+        </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cogs"></i> <span> Configuration</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-globe"></i> Country</a></li>
+            <li><a href="#"><i class="fa fa-users"></i> State/Province</a></li>
+            <li><a href="#"><i class="fa fa-building-o"></i> City/Town</a></li>
+            <li><a href="#"><i class="fa fa-file-word-o"></i> Document Category</a></li> 
+            <li><a href="#"><i class="fa fa-language"></i> Languages</a></li>
+            <li><a href="#"><i class="fa fa-calendar-o"></i> National Holiday</a></li>
+            <li><a href="#"><i class="fa fa-flag-checkered"></i>Nationality</a></li>
+            <li><a href="#"><i class="fa fa-university"></i>Institute</a></li>
+        </ul>
+        </li>
+         <li class="treeview"><a href="/administration/default/index"><i class="fa fa-wrench"></i><span>Administration</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
