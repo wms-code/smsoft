@@ -9,18 +9,6 @@
         <li class="header">MAIN NAVIGATION</li>
         <li> <a href="<?php echo base_url('admin') ?>">  <i class="fa fa-home"></i> <span>Home</span> </a>  </li>
 
-
-         <li class="treeview"><a href="<?php echo base_url('admin') ?>"><i class="fa fa-graduation-cap"></i> <span>Course Management</span></a>
-          <ul class="treeview-menu" style="display: block;">
-              <li>
-    <a href="/EduSec/index.php?r=course%2Fcourses%2Findex" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Course</a>     </li>
-              <li>
-    <a href="/EduSec/index.php?r=course%2Fbatches%2Findex" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Batch</a>      </li>
-        <li>
-    <a href="/EduSec/index.php?r=course%2Fsection%2Findex" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Section</a>      </li>
-          </ul>
-
-         </li>
         <li class="treeview"><a href="/admission/default/index"><i class="fa fa-user-plus"></i><span>Admission</span></a></li>
           <li class="treeview">
           <a href="#">
