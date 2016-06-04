@@ -1,0 +1,72 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 04, 2016 at 09:28 AM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.5.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `cms`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stuinfo`
+--
+
+CREATE TABLE `stuinfo` (
+  `stu_id` int(11) NOT NULL,
+  `stu_title` varchar(5) NOT NULL,
+  `stu_first_name` varchar(25) NOT NULL,
+  `stu_middle_name` varchar(20) NOT NULL,
+  `stu_last_name` varchar(20) NOT NULL,
+  `stu_gender` text NOT NULL,
+  `stu_email_id` varchar(55) NOT NULL,
+  `stu_mobile_no` text NOT NULL,
+  `stu_dob` date NOT NULL,
+  `stu_admission_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stuinfo`
+--
+
+INSERT INTO `stuinfo` (`stu_id`, `stu_title`, `stu_first_name`, `stu_middle_name`, `stu_last_name`, `stu_gender`, `stu_email_id`, `stu_mobile_no`, `stu_dob`, `stu_admission_date`) VALUES
+(1, 'Mr.', 'arun', 'test', 'kumar', 'MALE', 'gagg@gmai.com', '07879745852', '2016-05-11', '2016-05-24'),
+(2, 'Mr.', 'arun', 'ram', 'Ganesh', 'MALE', 'test@tret.com', '9843365657', '2016-05-11', '2016-05-10'),
+(3, 'Mr.', 'arun', 'ram', 'kumar', 'FEMALE', 'gaagg@gmai.com', '7879745852', '2016-05-03', '2016-05-25');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `stuinfo`
+--
+ALTER TABLE `stuinfo`
+  ADD PRIMARY KEY (`stu_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `stuinfo`
+--
+ALTER TABLE `stuinfo`
+  MODIFY `stu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
