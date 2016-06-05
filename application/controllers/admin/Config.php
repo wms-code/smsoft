@@ -27,10 +27,18 @@ class Config extends CI_Controller {
 
 	public function country()
 	{
-		
-		$this->load->view('admin/config/country');
-	}
+		//TODO: Need change in update_by once login module completed
+		if(isset($_POST['country'])){	
+			$data['country_name'] = $_POST['country'];
+			$data['updated_by'] = "test_user";
+			$this->db->insert('countries',$data);
+		}
+	
+		$query = $this->db->query('SELECT country_id, country_name FROM countries');
+		$country_data['countries'] = $query->result();
+		$this->load->view('admin/config/country',$country_data);
 
+	}
 }
 
 /* End of file Config.php */

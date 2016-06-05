@@ -40,28 +40,26 @@
 				    <div class="modal-content">
 				      <div class="modal-header">
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				        <h4 class="modal-title" id="myModalLabel">Add country</h4>
 				      </div>
-				    <form class="form-horizontal">
+				    <form class="form-horizontal" method="post" action="<?php echo base_url('admin/config/country'); ?> ">
               <div class="modal-body">
                 <div class="form-group">
                   <label for="country" class="col-sm-3 control-label">Country Name</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="country" placeholder="india" >
+                    <input name="country" type="text" class="form-control" id="country" placeholder="india" >
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Add Country</button>
               </div>
             </form>
             </div>
 				  </div>
 				</div>
-
-
 
            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel">
           <div class="modal-dialog" role="document">
@@ -138,21 +136,18 @@
                 </tr>
                 </thead>
                 <tbody>
-	            <tr>
-                  <td>102</td>
-                  <td>India</td>
-                  <td> <a href="<?php echo base_url(); ?>admin/config/country/view/1"  class="btn btn-primary btn-sm">View</a></td>                 
-                 <td> <a href="<?php echo base_url(); ?>admin/config/country/edit/1"  class="btn btn-success btn-sm">Edit</a></td>             
-                 <td> <a href="<?php echo base_url(); ?>admin/config/country/delete/1"  class="btn btn-danger btn-sm">Delete</a></td>             
-                </tr>
-                  <tr>
-                  <td>102</td>
-                  <td>candia</td>
-                   <td> <a href=""  class="btn btn-primary btn-sm">View</a></td>                 
-                 <td> <a href=""  class="btn btn-success btn-sm">Edit</a></td>             
-                 <td> <a href=""  class="btn btn-danger btn-sm">Delete</a></td>            
-				</div>
-                </tr>    
+                <?php 
+                foreach ($countries as $country) {
+                  echo "<tr>";
+                  echo "<td>" . $country->country_id . "</td>";
+                  echo "<td>" . $country->country_name . "</td>";
+                  echo "<td> <a href=" . base_url('admin/config/country/view/1') . "  class='btn btn-primary btn-sm'>View</a></td>";
+                  echo "<td> <a href=" . base_url('admin/config/country/edit/1') . "  class='btn btn-success btn-sm'>Edit</a></td>"; 
+                  echo "<td> <a href=" . base_url('admin/config/country/delete/1') . "  class='btn btn-danger btn-sm'>Delete</a></td>";               
+                  echo "</tr>";
+                }
+
+                ?>  
                 </tbody>
                 <tfoot>
                 <tr>
