@@ -48,7 +48,7 @@
                   <label for="country" class="col-sm-3 control-label">Country Name</label>
 
                   <div class="col-sm-9">
-                    <input name="country" type="text" class="form-control" id="country" placeholder="india" >
+                    <input name="country" type="text" class="form-control" id="country" placeholder="Country" >
                   </div>
                 </div>
               </div>
@@ -60,7 +60,7 @@
             </div>
 				  </div>
 				</div>
-
+<?php if ($this->uri->segment(4)=='view') { ?>
            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -74,20 +74,19 @@
                   <label for="country" class="col-sm-3 control-label">Country Name</label>
 
                   <div class="col-sm-9">
-                    <input type="text"  id="disabledTextInput" class="form-control" id="country" placeholder="india" disabled>
+                    <input type="text"   id="disabledTextInput" class="form-control" id="country" placeholder="<?php echo $country->country_name ?>" disabled>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
               </div>
             </form>
             </div>
           </div>
         </div>
 
-
+<?php } elseif ($this->uri->segment(4)=='edit') {?>
           <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -101,7 +100,8 @@
                   <label for="country" class="col-sm-3 control-label">Country Name</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="country" value="india" >
+                    <input type="hidden" name="country_id"  value="<?php echo $country->country_id ?>" >
+                    <input type="text" name="country_name" class="form-control" id="country" value="<?php echo $country->country_name ?>" >
                   </div>
                 </div>
               </div>
@@ -113,6 +113,7 @@
             </div>
           </div>
         </div>
+<?php } ?>
 </section>
 
    <section class="content">
@@ -138,13 +139,17 @@
                 <tbody>
                 <?php 
                 foreach ($countries as $country) {
-                  echo "<tr>";
-                  echo "<td>" . $country->country_id . "</td>";
-                  echo "<td>" . $country->country_name . "</td>";
-                  echo "<td> <a href=" . base_url('admin/config/country/view/1') . "  class='btn btn-primary btn-sm'>View</a></td>";
-                  echo "<td> <a href=" . base_url('admin/config/country/edit/1') . "  class='btn btn-success btn-sm'>Edit</a></td>"; 
-                  echo "<td> <a href=" . base_url('admin/config/country/delete/1') . "  class='btn btn-danger btn-sm'>Delete</a></td>";               
-                  echo "</tr>";
+                  $burl=base_url()."admin/config/country/";
+                  echo <<<EOT
+
+                  <tr>
+                  <td>  $country->country_id  </td>
+                  <td>  $country->country_name </td>
+                  <td> <a href="{$burl}view/{$country->country_id}"  class="btn btn-primary btn-sm">View</a></td>
+                  <td> <a href="{$burl}edit/{$country->country_id}"  class="btn btn-success btn-sm">Edit</a></td>
+                  <td> <a href="{$burl}delete/{$country->country_id}" class="btn btn-danger btn-sm">Delete</a></td>
+                  </tr>
+EOT;
                 }
 
                 ?>  

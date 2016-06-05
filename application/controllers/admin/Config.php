@@ -29,14 +29,23 @@ class Config extends CI_Controller {
 	{
 		//TODO: Need change in update_by once login module completed
 		if(isset($_POST['country'])){	
-			$data['country_name'] = $_POST['country'];
+			$data['country_name'] = $_POST['country']; //$_SESSION['username']
 			$data['updated_by'] = "test_user";
 			$this->db->insert('countries',$data);
 		}
+
+		if ($this->uri->segment(4)) {
+
+			$this->db->where('country_id',$this->uri->segment(5));
+			$query=$this->db->get('countries');
+			$data['country']=$query->result()[0];
+
+		}
+
 	
 		$query = $this->db->query('SELECT country_id, country_name FROM countries');
-		$country_data['countries'] = $query->result();
-		$this->load->view('admin/config/country',$country_data);
+		$data['countries'] = $query->result();
+		$this->load->view('admin/config/country',$data);
 
 	}
 }
