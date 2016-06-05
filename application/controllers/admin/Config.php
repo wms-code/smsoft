@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Appconfig extends CI_Controller {
+class Config extends CI_Controller {
 
 
 	public function __construct()
@@ -28,7 +28,7 @@ class Appconfig extends CI_Controller {
 	public function country()
 	{
 		
-		$this->load->view('country');
+		$this->load->view('admin/config/country');
 	}
 
 }

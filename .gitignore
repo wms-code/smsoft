@@ -15,7 +15,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 system/*
 plugins/*
-dist/*
+dist/img/
+dist/js/
+dist/css/skins/
 bootstrap/*
 /vendor/
 
