@@ -4,6 +4,7 @@
 <script type="text/javascript">
     $(window).load(function(){
         $('#viewModal').modal('show');
+
     });
 </script>
 
@@ -34,7 +35,9 @@
 <li class="active"><a href="<?php echo base_url() ?>admin/student/create">Create New Student</a></li>
 </ul> 
 <h1>
-            <i class="fa fa-plus-globe"></i> Country <small>  <a href="" class="btn btn-warning" data-toggle="modal" data-target="#addModal"> <i class="fa fa-plus-square" > Add New</i></a> </small>        </h1>   
+            <i class="fa fa-plus-globe"></i> Country <small>  <a href="" accesskey="n" class="btn btn-warning" data-toggle="modal" data-target="#addModal"> <i class="fa fa-plus-square" > Add New</i></a> </small>        </h1> 
+
+
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
@@ -60,6 +63,7 @@
             </div>
 				  </div>
 				</div>
+
 <?php if ($this->uri->segment(4)=='view') { ?>
            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel">
           <div class="modal-dialog" role="document">
@@ -94,20 +98,20 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Edit Modal</h4>
               </div>
-              <form class="form-horizontal">
+              <form class="form-horizontal" method="post" action="">
               <div class="modal-body">
                 <div class="form-group">
                   <label for="country" class="col-sm-3 control-label">Country Name</label>
 
                   <div class="col-sm-9">
                     <input type="hidden" name="country_id"  value="<?php echo $country->country_id ?>" >
-                    <input type="text" name="country_name" class="form-control" id="country" value="<?php echo $country->country_name ?>" >
+                    <input type="text" name="country_name" class="form-control" id="countryedit" value="<?php echo $country->country_name ?>" >
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
               </div>
             </form>
             </div>
