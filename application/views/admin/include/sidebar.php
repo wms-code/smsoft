@@ -36,13 +36,13 @@
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-user-plus"></i>  Add Student</a></li>
-            <li><a href="#"><i class="fa fa-users"></i>  Manage Students</a></li>
-            <li><a href="#"><i class="fa fa-info-circle"></i>  Student Status</a></li>
-            <li><a href="#"><i class="fa fa-upload"></i>  Import Student</a></li> 
-            <li><a href="#"><i class="fa fa-wrench"></i>  Admission Category</a></li>
-            <li><a href="#"><i class="fa fa-pencil-square-o"></i>  Reset Login</a></li>
-            <li><a href="#"><i class="fa fa-refresh"></i>  Reset Password</a></li> 
+            <li><a href="<?php echo base_url(); ?>admin/student/create"><i class="fa fa-user-plus"></i>  Add Student</a></li>
+            <li><a href="<?php echo base_url(); ?>admin/student/plist"><i class="fa fa-users"></i>  Manage Students</a></li>
+            <li><a href="<?php echo base_url(); ?>admin/student/student_status"><i class="fa fa-info-circle"></i>  Student Status</a></li>
+            <li><a href="<?php echo base_url(); ?>admin/student/student_import"><i class="fa fa-upload"></i>  Import Student</a></li> 
+            <li><a href="<?php echo base_url(); ?>admin/student/admin_category"><i class="fa fa-wrench"></i>  Admission Category</a></li>
+            <li><a href="<?php echo base_url(); ?>admin/student/reset_login"><i class="fa fa-pencil-square-o"></i>  Reset Login</a></li>
+            <li><a href="<?php echo base_url(); ?>admin/student/reset_password"><i class="fa fa-refresh"></i>  Reset Password</a></li> 
         </ul>
         </li>
         <li class="treeview">

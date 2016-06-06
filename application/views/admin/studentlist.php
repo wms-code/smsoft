@@ -4,22 +4,19 @@
 <!-- Site wrapper -->
 <div class="wrapper">
 
-<?php  include('include/header.php') ?>
+<?php  $this->load->view('admin/include/header'); ?>
 
 
-<?php  include('include/sidebar.php') ?>
+<?php  $this->load->view('admin/include/sidebar'); ?>
 
   <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 302px;">
-    <section class="content-header">
-        <h1>
-            <i class="fa fa-plus-square"></i> Create <small> New Student </small>        </h1>
-        <ul class="breadcrumb"><li><a href="<?php echo base_url() ?>"><i class="fa fa-home"></i>Home</a></li>
-<li><a href="<?php echo base_url() ?>">Student</a></li>
-<li><a href="<?php echo base_url() ?>admin/student/list">Student List</a></li>
-<li class="active"><a href="<?php echo base_url() ?>admin/student/create">Create New Student</a></li>
-</ul>    
-</section>
+     <section class="content-header">
+        <h1><i class="fa fa-plus-square"></i> Students List <small> All Students </small></h1>
+        <ul class="breadcrumb"><li><a href="<?php echo base_url() ?>admin"><i class="fa fa-home"></i>Home</a></li>
+<li><a href="<?php echo base_url() ?>admin/student">Student</a></li>
+<li><a href="<?php echo base_url() ?>admin/student/plist">Students List</a></li>
+</ul>    </section>
 
    <section class="content">
       <div class="callout callout-info">
@@ -30,7 +27,12 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Customer List</h3>
+              <table>
+              <tr><td width="90%"><h3 class="box-title">Students List</h3></td>
+              <td width="10%">
+              <a href="create" accesskey="n">Add New Record</a>
+              </td></tr>
+              </table>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -58,24 +60,20 @@
                   <td><?=$i?></td>
                   <td><?=$row->roll_no?></td>
                   <td><?=$row->title?>&nbsp;<?=$row->first_name?>&nbsp;<?=$row->middle_name?>&nbsp;<?=$row->last_name?></td>
-                  <td><?=$row->gender?></td>
-                  <td><?=$row->customer_mobile?></td>
-                  <td><?php if($row->customer_type==0) { echo "Not Specified"; } else if($row->customer_type==1){echo "Whole Seller";}else if($row->customer_type==2){echo "Retailer";}else if($row->customer_type==3){echo "Customer";} ?></td>
-                  <td><a href="customer_edit/<?=$row->customer_id?>" class="fa fa-fw fa-edit">Edit</a>&emsp;<a href="customer_delete/<?=$row->customer_id?>" lass="fa fa-fw fa-remove">Remove</a></td>
+                  <td><?=$row->course?></td>
+                  <td><?=$row->section?></td>
+                  <td><?=$row->adm_category?></td>
+                  <td><?=$row->mobile?></td>
+                  <td><?=$row->email_id?></td>
+                  <td>
+                  <a href="<?php echo base_url('admin/student/studentedit') ?>/<?=$row->roll_no?>" class="fa fa-fw fa-edit"></a>
+                  <a href="<?php echo base_url('admin/student/studentremove') ?>/<?=$row->roll_no?>" class="fa fa-fw fa-remove"></a>
+                  </td>
                 </tr>
                 <?php } ?>
                 
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>S.No</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>City(s)</th>
-                  <th>Mobile</th>
-                  <th>Customer Type</th>
-                </tr>
-                </tfoot>
+                
               </table>
             </div>
             <!-- /.box-body -->
@@ -86,6 +84,6 @@
   <!-- /.content-wrapper -->
 
  
-<?php  include('include/footer.php') ?>
+<?php $this->load->view('admin/include/footer'); ?>
 </body>
 </html>
