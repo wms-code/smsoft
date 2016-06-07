@@ -158,6 +158,137 @@ class Config extends CI_Controller {
 		$this->load->view('admin/config/course',$data);
 
 	}
+	public function category()
+	{
+		//create a new country 
+		if(isset($_POST['category'])&& $_POST['category'] !=""){	
+			$data['category_name'] = $_POST['category']; //$_SESSION['username']  
+			$data['updated_by'] = "test_user";
+			$this->db->insert('categories',$data);
+		}
+
+
+		if ($this->uri->segment(4)) {
+
+			//edit a country
+			if(isset($_POST['category_id'])){	
+				$data['category_id']=$_POST['category_id'];
+				$data['category_name']=$_POST['category_name'];
+				$data['updated_by'] = "test_user";  //$_SESSION['username']
+				$this->db->where('category_id', $_POST['category_id']);
+				$this->db->update('categories', $data);
+				$url=base_url('admin/config/category');
+				 header("Location: $url");
+
+			}
+			elseif ($this->uri->segment(4)=='delete') {
+			$this->db->where('category_id',$this->uri->segment(5));
+			$this->db->delete('categories');	
+			$url=base_url('admin/config/category');
+			header("Location: $url");
+			}
+
+		//get view page and edit page country
+		$this->db->where('category_id',$this->uri->segment(5));
+		$query=$this->db->get('categories');
+		$data['category']=$query->result()[0];
+		}
+
+	
+		//get all countries list
+		$query = $this->db->query('SELECT category_id, category_name FROM categories');
+		$data['categories'] = $query->result();
+		$this->load->view('admin/config/admissioncat',$data);
+
+	}
+	public function degree()
+	{
+		//create a new country 
+		if(isset($_POST['degree'])&& $_POST['degree'] !=""){	
+			$data['degree_name'] = $_POST['degree']; //$_SESSION['username']  
+			$data['updated_by'] = "test_user";
+			$this->db->insert('degrees',$data);
+		}
+
+
+		if ($this->uri->segment(4)) {
+
+			//edit a country
+			if(isset($_POST['degree_id'])){	
+				$data['degree_id']=$_POST['degree_id'];
+				$data['degree_name']=$_POST['degree_name'];
+				$data['updated_by'] = "test_user";  //$_SESSION['username']
+				$this->db->where('degree_id', $_POST['degree_id']);
+				$this->db->update('degrees', $data);
+				$url=base_url('admin/config/degree');
+				 header("Location: $url");
+
+			}
+			elseif ($this->uri->segment(4)=='delete') {
+			$this->db->where('degree_id',$this->uri->segment(5));
+			$this->db->delete('degrees');	
+			$url=base_url('admin/config/degree');
+			header("Location: $url");
+			}
+
+		//get view page and edit page country
+		$this->db->where('degree_id',$this->uri->segment(5));
+		$query=$this->db->get('degrees');
+		$data['degree']=$query->result()[0];
+		}
+
+	
+		//get all countries list
+		$query = $this->db->query('SELECT degree_id, degree_name FROM degrees');
+		$data['degrees'] = $query->result();
+		$this->load->view('admin/config/degree',$data);
+
+	}
+	public function entry()
+	{
+		//create a new country 
+		if(isset($_POST['entry_level'])&& $_POST['entry_level'] !=""){	
+			$data['entry_level'] = $_POST['entry_level']; //$_SESSION['username']  
+			$data['updated_by'] = "test_user";
+			$this->db->insert('entry_level',$data);
+		}
+
+
+		if ($this->uri->segment(4)) {
+
+			//edit a country
+			if(isset($_POST['entry_level_id'])){	
+				$data['entry_level_id']=$_POST['entry_level_id'];
+				$data['entry_level']=$_POST['entry_level'];
+				$data['updated_by'] = "test_user";  //$_SESSION['username']
+				$this->db->where('entry_level_id', $_POST['entry_level_id']);
+				$this->db->update('entry_level', $data);
+				$url=base_url('admin/config/entry');
+				 header("Location: $url");
+
+			}
+			elseif ($this->uri->segment(4)=='delete') {
+			$this->db->where('entry_level_id',$this->uri->segment(5));
+			$this->db->delete('entry_level');	
+			$url=base_url('admin/config/entry');
+			header("Location: $url");
+			}
+
+		//get view page and edit page country
+		$this->db->where('entry_level_id',$this->uri->segment(5));
+		$query=$this->db->get('entry_level');
+		$data['entrylevel']=$query->result()[0];
+		}
+
+	
+		//get all countries list
+		$query = $this->db->query('SELECT entry_level_id, entry_level FROM entry_level');
+		$data['entry_level'] = $query->result();
+		$this->load->view('admin/config/entry',$data);
+
+	}
+
+
 }
 
 /* End of file Config.php */
