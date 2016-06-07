@@ -40,11 +40,11 @@
                 <thead>
                 <tr>
                   <th>S.No</th>
-                  <th>Roll No</th>
+                  <th>Employee ID</th>
                   <th>Name</th>
-                  <th>Course</th>
-                  <th>Section</th>
-                  <th>Admission Category</th>
+                  <th>Department</th>
+                  <th>Designation</th>
+                  <th>Employee Category</th>
                   <th>Mobile</th>
                   <th>Email</th>
                   <th>Action</th>
@@ -53,21 +53,21 @@
                 <tbody>
                 <?php  
                 $i=0;               
-                foreach($query1->result() as $row) 
+                foreach($query->result() as $row) 
                 { 
                   $i=$i+1; ?>
                 <tr>
                   <td><?=$i?></td>
-                  <td><?=$row->roll_no?></td>
+                  <td><?=$row->emp_id?></td>
                   <td><?=$row->title?>&nbsp;<?=$row->first_name?>&nbsp;<?=$row->middle_name?>&nbsp;<?=$row->last_name?></td>
                   <td><?=$row->course?></td>
-                  <td><?=$row->section?></td>
-                  <td><?=$row->adm_category?></td>
+                  <td><?=$row->designation?></td>
+                  <td><?=$row->app_category?></td>
                   <td><?=$row->mobile?></td>
                   <td><?=$row->email_id?></td>
                   <td>
-                  <a href="<?php echo base_url('admin/student/studentedit') ?>/<?=$row->roll_no?>" class="fa fa-fw fa-edit"></a>
-                  <a href="<?php echo base_url('admin/student/studentremove') ?>/<?=$row->roll_no?>" class="fa fa-fw fa-remove"></a>
+                  <a href="<?php echo base_url('admin/Employee/employeeedit') ?>/<?=$row->emp_id?>" class="fa fa-fw fa-edit"></a>
+                  <a href="<?php echo base_url('admin/employee/employeeremove') ?>/<?=$row->emp_id?>" class="fa fa-fw fa-remove"></a>
                   </td>
                 </tr>
                 <?php } ?>
