@@ -44,15 +44,38 @@ class Student extends CI_Controller {
 			$data['course']=$this->input->post('course');
 			$data['section']=$this->input->post('section');
 			$data['adm_date']=$this->input->post('adm_date');
+			$data['entry_level']=$this->input->post('entry_level');
+			$data['degree']=$this->input->post('degree');
 			$data['entry_by']="hi";
 
+
+			$data1['entry_by']="hi";
+			$data1['roll_no']=$this->input->post('roll_no');
+			$data1['college_fee']=$this->input->post('college_fee');
+			$data1['hostel_fee']=$this->input->post('hostel_fee');
+			$data1['transport_fee']=$this->input->post('transport_fee');
+			$data1['tution_fee']=$this->input->post('tution_fee');
+			$data1['fee']=$this->input->post('fee');
+			$data1['other_fee']=$this->input->post('other_fee');
+			$data1['total_fees']=$data1['college_fee']+$data1['hostel_fee']+$data1['transport_fee']+$data1['tution_fee']+$data1['other_fee'];
+
+			
 			$this->db->insert('stuinfo', $data);
+
+			$this->db->insert('fee_details', $data1);
 
 			$url=base_url('admin/student/plist');
 			header("location:$url");
 		}
 		else {
-			$this->load->view('admin/studentadd');
+	    	$data['query']=$this->db->get('stuinfo');
+	    	$data['adm']=$this->db->get('admission');
+			$data['query1']=$this->db->get('stuinfo');
+			$data['fees']=$this->db->get('fee_details');
+			$data['degr']=$this->db->get('degrees');
+			$data['cours']=$this->db->get('courses');
+			$data['entrys']=$this->db->get('entry_level');
+			$this->load->view('admin/studentadd',$data);
 		}		
 				
 	}
@@ -91,11 +114,28 @@ class Student extends CI_Controller {
 			$data['adm_category']=$this->input->post('adm_category');
 			$data['course']=$this->input->post('course');
 			$data['section']=$this->input->post('section');
-			$data['adm_date']=$this->input->post('adm_date');
+			$data['adm_date']=$this->input->post('adm_date');			
+			$data['entry_level']=$this->input->post('entry_level');
+			$data['degree']=$this->input->post('degree');
 			$data['entry_by']="hi";
+
+			$data1['entry_by']="hi";
+			$data1['roll_no']=$this->input->post('roll_no');
+			$data1['college_fee']=$this->input->post('college_fee');
+			$data1['hostel_fee']=$this->input->post('hostel_fee');
+			$data1['transport_fee']=$this->input->post('transport_fee');
+			$data1['tution_fee']=$this->input->post('tution_fee');
+			$data1['fee']=$this->input->post('fee');
+			$data1['other_fee']=$this->input->post('other_fee');
+			$data1['total_fees']=$data1['college_fee']+$data1['hostel_fee']+$data1['transport_fee']+$data1['tution_fee']+$data1['other_fee'];
+
+
 
 			$this->db->where('roll_no',$roll_no);
 			$this->db->update('stuinfo', $data);
+
+			$this->db->where('roll_no',$roll_no);
+			$this->db->update('fee_details', $data1);
 
 			$url = base_url('admin/student/plist');
 	        header("Location: $url");
@@ -103,8 +143,16 @@ class Student extends CI_Controller {
 
 	    else {
 	    	$roll_no=$this->uri->segment(4);
+	    	$data['query']=$this->db->get('stuinfo');
+	    	$data['adm']=$this->db->get('admission');
 	    	$this->db->where('roll_no',$roll_no);
-			$data['query']=$this->db->get('stuinfo');
+			$data['query1']=$this->db->get('stuinfo');
+			$this->db->where('roll_no',$roll_no);
+			$data['fees']=$this->db->get('fee_details');
+			$data['degr']=$this->db->get('degrees');
+			$data['cours']=$this->db->get('courses');
+			$data['entrys']=$this->db->get('entry_level');
+			
 			$this->load->view('admin/studentedit',$data);
 		}
 

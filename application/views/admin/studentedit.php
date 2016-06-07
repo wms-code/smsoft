@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <?php $this->load->view('admin/include/head'); ?>
+  <title>Student Edit</title>
+  <?php $this->load->view('admin/studentlist'); ?>
 
 <script type="text/javascript">
     $(window).load(function(){
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<?php $this->load->view('admin/studentlist'); ?>
+
 <div class="container">
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -29,7 +29,7 @@
           
 <section class="content">
  
-<?php foreach($query->result() as $row)  ?>
+<?php foreach($query1->result() as $row)  ?>
 <div class="box-body">
 
     <form id="stu-master-form" action="" method="post">
@@ -136,7 +136,7 @@
     
 
   </div>
-  <h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Academic Details  </h2>
+  <h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Admission Details  </h2>
   
   <div class="row">
   
@@ -145,20 +145,61 @@
             <label>Admission Category</label>
             <select name="adm_category" class="form-control">
             <option value="<?=$row->adm_category?>"><?=$row->adm_category?></option>
-            <option value="Counselling">Counselling</option>
-            <option value="Merit">Merit</option>
-            <option value="Management">Management</option>
-            <option value="Others">Others</option>
+            <?php foreach($adm->result() as $adm1) { ?>
+            <option value="<?=$adm1->adm_category?>"><?=$adm1->adm_category?></option> 
+            <?php } ?>
             </select>
             <div class="help-block"></div>
           </div>      
       </div>
 
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Admission Date</label>
+      <input type="date" class="form-control" name="adm_date" value="<?=$row->adm_date?>">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+<div class="col-md-4">
+      <div class="form-group">
+      <label>Entry Level</label>
+      <select name="entry_level" class="form-control">
+        <option value="<?=$row->entry_level?>"><?=$row->entry_level?></option>
+        <?php foreach($entrys->result() as $entrys1) { ?>
+        <option value="<?=$entrys1->entry_level?>"><?=$entrys1->entry_level?></option> 
+        <?php } ?>
+      </select>
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+  </div>
+
+    <div class="row">
 
     <div class="col-md-4">
       <div class="form-group">
-      <label>Course</label>
-      <input type="text" class="form-control" name="course" value="<?=$row->course?>">
+      <label>Degree</label>
+      <select name="degree" class="form-control">
+        <option value="<?=$row->degree?>"><?=$row->degree?></option>
+        <?php foreach($degr->result() as $degre) { ?>
+        <option value="<?=$degre->degree_name?>"><?=$degre->degree_name?></option> 
+        <?php } ?>
+      </select>
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Department</label>
+      <select name="course" class="form-control">
+        <option value="<?=$row->course?>"><?=$row->course?></option>
+        <?php foreach($cours->result() as $course) { ?>
+        <option value="<?=$course->course_name?>"><?=$course->course_name?></option> 
+        <?php } ?>
+      </select>
       <div class="help-block"></div>
       </div> 
     </div>
@@ -171,18 +212,64 @@
       <div class="help-block"></div>
       </div> 
     </div>
+    </div>
 
-  </div>
-    <div class="row">
+<h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Fees Details  </h2>
+  
+  <div class="row">
+<?php foreach($fees->result() as $fee)  ?>
     <div class="col-md-4">
       <div class="form-group">
-      <label>Admission Date</label>
-      <input type="date" class="form-control" name="adm_date" value="<?=$row->adm_date?>">
+      <label>College Fees</label>
+      <input type="text" class="form-control" name="college_fee" value="<?=$fee->college_fee?>">
       <div class="help-block"></div>
       </div> 
     </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Transport Fees</label>
+      <input type="text" class="form-control" name="transport_fee" value="<?=$fee->transport_fee?>">
+      <div class="help-block"></div>
+      </div> 
     </div>
 
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Hostel Fees</label>
+      <input type="text" class="form-control" name="hostel_fee" value="<?=$fee->hostel_fee?>">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+  </div>
+
+<div class="row">
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Tution Fees</label>
+      <input type="text" class="form-control" name="tution_fee" value="<?=$fee->tution_fee?>">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Others Fees</label>
+      <input type="text" class="form-control" name="fee" placeholder="specify the category" value="<?=$fee->fee?>">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group"><label>&nbsp;</label>
+       <input type="text" class="form-control" name="other_fee" value="<?=$fee->other_fee?>">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+    
+  </div>
 
 
   
@@ -200,6 +287,5 @@
   
 </div>
 </form>
-</body>
-<?php $this->load->view('admin/include/footer'); ?>
+
 </html>

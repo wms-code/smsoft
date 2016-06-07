@@ -30,7 +30,7 @@
               <table>
               <tr><td width="90%"><h3 class="box-title">Students List</h3></td>
               <td width="10%">
-              <a href="create" accesskey="n">Add New Record</a>
+              <a href="<?php echo base_url() ?>admin/student/create" accesskey="n">Add New Record</a>
               </td></tr>
               </table>
             </div>

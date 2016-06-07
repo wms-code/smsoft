@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <title>Student Edit</title>
+  <?php $this->load->view('admin/studentlist'); ?>
 
 <script type="text/javascript">
     $(window).load(function(){
@@ -16,6 +12,7 @@
 </script>
 </head>
 <body>
+
 
 <div class="container">
   <!-- Modal -->
@@ -31,12 +28,8 @@
         <div class="modal-body">
           
 <section class="content">
-                
-<div class="box box-primary">
-  
-
-
-
+ 
+<?php foreach($query1->result() as $row)  ?>
 <div class="box-body">
 
     <form id="stu-master-form" action="" method="post">
@@ -58,6 +51,7 @@
         <div class="form-group field-stuinfo-stu_title">
             <label>Title</label>
             <select name="title" class="form-control">
+            <option value="">---Select---</option>
             <option value="Mr.">Mr.</option>
             <option value="Mrs.">Mrs.</option>
             <option value="Ms.">Ms.</option>
@@ -99,6 +93,7 @@
         <div class="form-group field-stuinfo-stu_title">
             <label>Gender</label>
             <select name="gender" class="form-control">
+            <option value="">---Select---</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Transgender">Transgender</option>
@@ -141,7 +136,7 @@
     
 
   </div>
-  <h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Academic Details  </h2>
+  <h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Admission Details  </h2>
   
   <div class="row">
   
@@ -149,20 +144,62 @@
         <div class="form-group field-stuinfo-stu_title">
             <label>Admission Category</label>
             <select name="adm_category" class="form-control">
-            <option value="Counselling">Counselling</option>
-            <option value="Merit">Merit</option>
-            <option value="Management">Management</option>
-            <option value="Others">Others</option>
+            <option value="">---Select---</option>
+            <?php foreach($adm->result() as $adm1) { ?>
+            <option value="<?=$adm1->adm_category?>"><?=$adm1->adm_category?></option> 
+            <?php } ?>
             </select>
             <div class="help-block"></div>
           </div>      
       </div>
 
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Admission Date</label>
+      <input type="date" class="form-control" name="adm_date" value="<?=$row->adm_date?>">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+<div class="col-md-4">
+      <div class="form-group">
+      <label>Entry Level</label>
+      <select name="entry_level" class="form-control">
+        <option value="">---Select---</option>
+        <?php foreach($entrys->result() as $entrys1) { ?>
+        <option value="<?=$entrys1->entry_level?>"><?=$entrys1->entry_level?></option> 
+        <?php } ?>
+      </select>
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+  </div>
+
+    <div class="row">
 
     <div class="col-md-4">
       <div class="form-group">
-      <label>Course</label>
-      <input type="text" class="form-control" name="course">
+      <label>Degree</label>
+      <select name="degree" class="form-control">
+        <option value="">---Select---</option>
+        <?php foreach($degr->result() as $degre) { ?>
+        <option value="<?=$degre->degree_name?>"><?=$degre->degree_name?></option> 
+        <?php } ?>
+      </select>
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Department</label>
+      <select name="course" class="form-control">
+        <option value="">---Select---</option>
+        <?php foreach($cours->result() as $course) { ?>
+        <option value="<?=$course->course_name?>"><?=$course->course_name?></option> 
+        <?php } ?>
+      </select>
       <div class="help-block"></div>
       </div> 
     </div>
@@ -175,17 +212,63 @@
       <div class="help-block"></div>
       </div> 
     </div>
+    </div>
 
-  </div>
-    <div class="row">
+<h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Fees Details  </h2>
+  
+  <div class="row">
+<?php foreach($fees->result() as $fee)  ?>
     <div class="col-md-4">
       <div class="form-group">
-      <label>Admission Date</label>
-      <input type="date" class="form-control" name="adm_date">
+      <label>College Fees</label>
+      <input type="text" class="form-control" name="college_fee">
       <div class="help-block"></div>
       </div> 
     </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Transport Fees</label>
+      <input type="text" class="form-control" name="transport_fee">
+      <div class="help-block"></div>
+      </div> 
     </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Hostel Fees</label>
+      <input type="text" class="form-control" name="hostel_fee">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+  </div>
+
+<div class="row">
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Tution Fees</label>
+      <input type="text" class="form-control" name="tution_fee">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Others Fees</label>
+      <input type="text" class="form-control" name="fee" placeholder="specify the category">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group"><label>&nbsp;</label>
+       <input type="text" class="form-control" name="other_fee">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+    
   </div>
 
 
@@ -204,5 +287,5 @@
   
 </div>
 </form>
-</body>
+
 </html>
