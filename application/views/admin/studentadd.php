@@ -37,16 +37,13 @@
     <div class="row">
       <div class="col-md-4">
       <div class="form-group">
-      <label>Student Roll / Admission No</label>
+      <label>Roll / Admission No</label>
       <input type="text" class="form-control" name="roll_no">
       <div class="help-block"></div>
       </div>      
     </div>
 
-      
-    </div>
-    
-    <div class="row">
+  
       <div class="col-sm-4">
         <div class="form-group field-stuinfo-stu_title">
             <label>Title</label>
@@ -72,16 +69,16 @@
 
       <div class="col-md-4">
       <div class="form-group">
-      <label>Student Middle Name</label>
-      <input type="text" class="form-control" name="middle_name">
+      <label>Student Last Name</label>
+      <input type="text" class="form-control" name="last_name">
       <div class="help-block"></div>
       </div> 
       </div>
 
       <div class="col-md-4">
       <div class="form-group">
-      <label>Student Last Name</label>
-      <input type="text" class="form-control" name="last_name">
+     <label>Mobile No</label>
+      <input type="text" class="form-control" name="mobile">
       <div class="help-block"></div>
       </div> 
       </div>
@@ -114,28 +111,15 @@
 
     <div class="col-md-4">
       <div class="form-group">
-      <label>Mobile No</label>
-      <input type="text" class="form-control" name="mobile">
+      <label>Date of Birth</label>
+      <input type="date" name="dob" class="form-control">
       <div class="help-block"></div>
       </div> 
     </div>
 
   </div>
   
-  <div class="row">
-  
-    <div class="col-sm-4">
-        <div class="form-group field-stuinfo-stu_title">
-            <label>Date of Birth</label>
-            <input type="date" name="dob" class="form-control">
-            <div class="help-block"></div>
-          </div>      
-      </div>
-
-
-    
-
-  </div>
+ 
   <h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Admission Details  </h2>
   
   <div class="row">

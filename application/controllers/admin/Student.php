@@ -35,7 +35,7 @@ class Student extends CI_Controller {
 			$data['roll_no']=$this->input->post('roll_no');
 			$data['title']=$this->input->post('title');
 			$data['first_name']=$this->input->post('first_name');
-			$data['middle_name']=$this->input->post('middle_name');
+			//$data['middle_name']=$this->input->post('middle_name');
 			$data['last_name']=$this->input->post('last_name');
 			$data['gender']=$this->input->post('gender');
 			$data['email_id']=$this->input->post('email_id');
@@ -101,7 +101,7 @@ class Student extends CI_Controller {
 			$roll_no=$this->uri->segment(4);
 			$data['title']=$this->input->post('title');
 			$data['first_name']=$this->input->post('first_name');
-			$data['middle_name']=$this->input->post('middle_name');
+			//$data['middle_name']=$this->input->post('middle_name');
 			$data['last_name']=$this->input->post('last_name');
 			$data['gender']=$this->input->post('gender');
 			$data['email_id']=$this->input->post('email_id');
@@ -157,7 +157,13 @@ class Student extends CI_Controller {
 
 	public function master()
 	{
-		$this->load->view('admin/stumaster');
+		if($this->uri->segment(4))
+		{
+			$this->db->where('roll_no',$this->uri->segment(4));
+			$query=$this->db->get('stuinfo');
+			$data=$query->result()[0];
+		$this->load->view('admin/stumaster',$data);
+		}
 	}
 
 

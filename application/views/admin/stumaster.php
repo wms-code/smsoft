@@ -1,6 +1,6 @@
 <?php  include('include/head.php') ?>
 <style type="text/css">
-  .edusec-img-disp {
+  .edu-img-disp {
   border: 5px solid #fff;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
   width:135px;
@@ -17,55 +17,55 @@
   border-radius: 50%;
   padding: 5px 8px;
 }
-.edusec-user-profile .nav-tabs {
+.edu-user-profile .nav-tabs {
     border-bottom: 3px solid #00C0EF;
 }
 
-.edusec-user-profile .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.edu-user-profile .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
    background:#00C0EF;
    color:#fff;  
 }
-.edusec-user-profile .nav > li > a:hover, .edusec-user-profile .nav > li > a:focus {
+.edu-user-profile .nav > li > a:hover, .edu-user-profile .nav > li > a:focus {
    
     border:1px solid #00C0EF;
 }
-.edusec-profile-label {
+.edu-profile-label {
     background: #F4F4F4;
     border-bottom: 1px solid #ddd;
     padding:12px;
     word-wrap: break-word;
 }
-.edusec-profile-text {
+.edu-profile-text {
     background: #fff;
     border-bottom: 1px solid #ddd;
     padding:12px;
     word-wrap: break-word;
 }
 
-.edusec-profile-text:empty:before {
+.edu-profile-text:empty:before {
     content: '\00a0';
 }
 
-.edusec-stu-emg-gur .form-group {
+.edu-stu-emg-gur .form-group {
     float:right;
     margin-bottom:0;
 }
-.edusec-emg-ct-label {
+.edu-emg-ct-label {
    float: left;
    font-weight: bold;
    margin-right: 5px;
    margin-top: 4px;
 }
-.edusec-border-bottom-warning {
+.edu-border-bottom-warning {
   border-bottom: 1px solid #f39c12;
 }
-.edusec-profile-title-1 {
+.edu-profile-title-1 {
   font-size:17px;
 }
-.edusec-pf-bg {
+.edu-pf-bg {
   background-color: #f4f4f4;
 }
-.edusec-pf-border {
+.edu-pf-border {
   border: 1px solid #ececf0;
   box-shadow: 0 0 6px 1px #ececf0;
 }
@@ -107,17 +107,17 @@
 <li><a href="<?php echo base_url() ?>admin/student/plist">Students List</a></li>
 </ul>    </section>
 
-   <section class="content edusec-user-profile" style="min-height: 567px;">
+   <section class="content edu-user-profile" style="min-height: 567px;">
 <div class="row">
-  <div class="col-lg-3 table-responsive edusec-pf-border  edusecArLangCss" style="margin-bottom:15px">
+  <div class="col-lg-3 table-responsive edu-pf-border  eduArLangCss" style="margin-bottom:15px">
     <div class="col-md-12 text-center">
-      <img class="img-circle edusec-img-disp" src="/edusec/data/stu_images/no-photo.png" alt="No Image">    <div class="photo-edit">
-            <a class="photo-edit-icon" href="/edusec/index.php?r=student%2Fstu-master%2Fstu-photo&amp;sid=16" title="Change Profile Picture" data-toggle="modal" data-target="#photoup"><i class="fa fa-pencil"></i></a>          </div>
+      <img class="img-circle edu-img-disp" src="<?php echo base_url() ?>/dist/img/no-photo.png" alt="No Image">    <div class="photo-edit">
+            <a class="photo-edit-icon" href="/edu/index.php?r=student%2Fstu-master%2Fstu-photo&amp;sid=16" title="Change Profile Picture" data-toggle="modal" data-target="#photoup"><i class="fa fa-pencil"></i></a>          </div>
     </div>
     <table class="table table-striped">
       <tbody><tr>
         <th>Student ID</th>
-        <td>16</td>
+        <td><?= $roll_no ?></td>
       </tr>
       <tr>
         <th>Name</th>
@@ -165,76 +165,76 @@
   <div class="col-xs-12">
   <h2 class="page-header">  
   <i class="fa fa-info-circle"></i> Personal Details  <div class="pull-right">
-      <a id="update-data" class="btn btn-primary btn-sm" href="/edusec/index.php?r=student%2Fstu-master%2Fupdate&amp;sid=16&amp;tab=personal"><i class="fa fa-pencil-square-o"></i> Edit</a>    </div>
+      <a id="update-data" class="btn btn-primary btn-sm" href="/edu/index.php?r=student%2Fstu-master%2Fupdate&amp;sid=16&amp;tab=personal"><i class="fa fa-pencil-square-o"></i> Edit</a>    </div>
   </h2>
   </div><!-- /.col -->
 </div>
 
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="col-md-3 col-sm-3 col-xs-6 edusec-profile-label edusecArLangCss">Title</div>
-    <div class="col-md-9 col-sm-9 col-xs-6 edusec-profile-text">Mr.</div>
+    <div class="col-md-3 col-sm-3 col-xs-6 edu-profile-label eduArLangCss">Title</div>
+    <div class="col-md-9 col-sm-9 col-xs-6 edu-profile-text">Mr.</div>
   </div>
 
   <div class="col-md-12 col-xs-12 col-sm-12">
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edusec-bg-row">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">First Name</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">arun</div>
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">First Name</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">arun</div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Last Name</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">kumar</div>
-    </div>
-  </div>
-
-  <div class="col-md-12 col-xs-12 col-sm-12">
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edusec-bg-row">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Middle Name</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">s</div>
-    </div>
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Gender</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">MALE</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Last Name</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">kumar</div>
     </div>
   </div>
 
   <div class="col-md-12 col-xs-12 col-sm-12">
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Date of Birth</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">08-06-2016</div>
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Middle Name</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">s</div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Nationality</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">Not Set</div>
-    </div>
-  </div>
-
-
-  <div class="col-md-12 col-xs-12 col-sm-12">
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Admission Category</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">Not Set</div>
-    </div>
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Religion</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Gender</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">MALE</div>
     </div>
   </div>
 
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Bloodgroup</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text">Unknown</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Date of Birth</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">08-06-2016</div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Birthplace</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Nationality</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">Not Set</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-12 col-xs-12 col-sm-12">
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Admission Category</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">Not Set</div>
+    </div>
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Religion</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
+    </div>
+  </div>
+
+  <div class="col-md-12 col-xs-12 col-sm-12">
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Bloodgroup</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text">Unknown</div>
+    </div>
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Birthplace</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
   </div>
 
    <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="col-md-3 col-sm-3 col-xs-6 edusec-profile-label edusecArLangCss">Languages</div>
-    <div class="col-md-9 col-sm-9 col-xs-6 edusec-profile-text"></div>
+    <div class="col-md-3 col-sm-3 col-xs-6 edu-profile-label eduArLangCss">Languages</div>
+    <div class="col-md-9 col-sm-9 col-xs-6 edu-profile-text"></div>
   </div>
 
 </div> <!---Main Row Div--->
@@ -247,50 +247,50 @@
   <div class="col-xs-12 col-md-12 col-lg-12">
   <h2 class="page-header">  
   <i class="fa fa-info-circle"></i> Academic Details  <div class="pull-right">
-      <a id="update-data" class="btn-sm btn btn-primary text-warning" href="/edusec/index.php?r=student%2Fstu-master%2Fupdate&amp;sid=16&amp;tab=academic"><i class="fa fa-pencil-square-o"></i>Edit</a>    </div>
+      <a id="update-data" class="btn-sm btn btn-primary text-warning" href="/edu/index.php?r=student%2Fstu-master%2Fupdate&amp;sid=16&amp;tab=academic"><i class="fa fa-pencil-square-o"></i>Edit</a>    </div>
   </h2>
   </div><!-- /.col -->
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
-  <div class="col-md-4 col-xs-4 edusec-profile-label edusecArLangCss">Course</div>
-  <div class="col-md-8 col-xs-8 edusec-profile-text">BCA</div>
+  <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Course</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">BCA</div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
-  <div class="col-md-4 col-xs-4 edusec-profile-label edusecArLangCss">Batch</div>
-  <div class="col-md-8 col-xs-8 edusec-profile-text">BCA-Batch-01</div>
+  <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Batch</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">BCA-Batch-01</div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
-  <div class="col-md-4 col-xs-4 edusec-profile-label edusecArLangCss">Section</div>
-  <div class="col-md-8 col-xs-8 edusec-profile-text">BCA-Section-01</div>
+  <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Section</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">BCA-Section-01</div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12 col-md-12 col-lg-12">
-  <div class="col-md-4 col-xs-4 edusec-profile-label edusecArLangCss">Admission Date</div>
-  <div class="col-md-8 col-xs-8 edusec-profile-text">02-06-2016</div>
+  <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Admission Date</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">02-06-2016</div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
-  <div class="col-md-4 col-xs-4 edusec-profile-label edusecArLangCss">Student Status</div>
-  <div class="col-md-8 col-xs-8 edusec-profile-text">General/Default</div>
+  <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Student Status</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">General/Default</div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
-  <div class="col-md-4 col-xs-4 edusec-profile-label edusecArLangCss">Active/InActive</div>
-  <div class="col-md-8 col-xs-8 edusec-profile-text">Active</div>
+  <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Active/InActive</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">Active</div>
   </div>
 </div>
   
@@ -301,7 +301,7 @@
   <div class="col-xs-12 col-md-12 col-lg-12">
   <h2 class="page-header">  
   <i class="fa fa-info-circle"></i> Guardians Details <div class="pull-right">
-      <a id="update-guard-data" class="btn-sm btn btn-primary text-warning" href="/edusec/index.php?r=student%2Fstu-master%2Faddguardian&amp;sid=16"><i class="fa fa-user-plus"></i> Add Guardian</a>   </div>
+      <a id="update-guard-data" class="btn-sm btn btn-primary text-warning" href="/edu/index.php?r=student%2Fstu-master%2Faddguardian&amp;sid=16"><i class="fa fa-user-plus"></i> Add Guardian</a>   </div>
   </h2>
   </div><!-- /.col -->
 </div>
@@ -319,7 +319,7 @@
   <div class="col-xs-12">
   <h2 class="page-header">  
   <i class="fa fa-info-circle"></i> Address Info  <div class="pull-right">
-        <a id="update-data" class="btn btn-primary btn-sm" href="/edusec/index.php?r=student%2Fstu-master%2Fupdate&amp;sid=16&amp;tab=address"><i class="fa fa-pencil-square-o"></i>Edit</a>    </div>
+        <a id="update-data" class="btn btn-primary btn-sm" href="/edu/index.php?r=student%2Fstu-master%2Fupdate&amp;sid=16&amp;tab=address"><i class="fa fa-pencil-square-o"></i>Edit</a>    </div>
   </h2>
   </div><!-- /.col -->
 </div>
@@ -327,47 +327,47 @@
 <!---Start Current Address Block--->
 <div class="row">
   <div class="col-xs-12">
-  <h4 class="edusec-border-bottom-warning page-header edusec-profile-title-1">  
+  <h4 class="edu-border-bottom-warning page-header edu-profile-title-1">  
     Current Address </h4>
   </div><!-- /.col -->
 </div>
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="col-md-3 col-sm-3 col-xs-6 edusec-profile-label edusecArLangCss">Address</div>
-    <div class="col-md-9 col-sm-9 col-xs-6 edusec-profile-text"></div>
+    <div class="col-md-3 col-sm-3 col-xs-6 edu-profile-label eduArLangCss">Address</div>
+    <div class="col-md-9 col-sm-9 col-xs-6 edu-profile-text"></div>
     </div>
 
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-md-6 col-sm-6 col-xs-6 edusec-profile-label edusecArLangCss">City</div>
-    <div class="col-md-6 col-sm-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-md-6 col-sm-6 col-xs-6 edu-profile-label eduArLangCss">City</div>
+    <div class="col-md-6 col-sm-6 col-xs-6 edu-profile-text"></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-md-6 col-xs-6 edusec-profile-label edusecArLangCss">State</div>
-    <div class="col-md-6 col-xs-6 edusec-profile-text"></div>
-    </div>
-  </div>
-
-  <div class="col-md-12  col-xs-12">
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Country</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
-    </div>
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">House No</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-md-6 col-xs-6 edu-profile-label eduArLangCss">State</div>
+    <div class="col-md-6 col-xs-6 edu-profile-text"></div>
     </div>
   </div>
 
   <div class="col-md-12  col-xs-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Pincode</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Country</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Phone No</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">House No</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
+    </div>
+  </div>
+
+  <div class="col-md-12  col-xs-12">
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Pincode</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
+    </div>
+    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Phone No</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
   </div> 
  </div>
@@ -375,7 +375,7 @@
 <!---Start Permenant Address Block--->
 <div class="row">
   <div class="col-xs-12">
-  <h4 class="edusec-border-bottom-warning page-header edusec-profile-title-1">  
+  <h4 class="edu-border-bottom-warning page-header edu-profile-title-1">  
     Permenant Address </h4>
   </div><!-- /.col -->
 </div>
@@ -384,41 +384,41 @@
 
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="col-md-3 col-sm-3 col-xs-6 edusec-profile-label edusecArLangCss">Address</div>
-    <div class="col-md-9 col-sm-9 col-xs-6 edusec-profile-text"></div>
+    <div class="col-md-3 col-sm-3 col-xs-6 edu-profile-label eduArLangCss">Address</div>
+    <div class="col-md-9 col-sm-9 col-xs-6 edu-profile-text"></div>
   </div>
 
   <div class="col-md-12  col-xs-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">City</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">City</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">State</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">State</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
   </div>
 
 
   <div class="col-md-12  col-xs-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Country</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Country</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">House No</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">House No</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
   </div>
 
   <div class="col-md-12  col-xs-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Pincode</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Pincode</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edusec-profile-label edusecArLangCss">Phone No</div>
-    <div class="col-lg-6 col-xs-6 edusec-profile-text"></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Phone No</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"></div>
     </div>
   </div>
 </div>
@@ -431,7 +431,7 @@
 <!---Start Permenant Address Block--->
 <div class="row">
   <div class="col-xs-12">
-  <h4 class="edusec-border-bottom-warning page-header edusec-profile-title-1">  
+  <h4 class="edu-border-bottom-warning page-header edu-profile-title-1">  
     <i class="fa fa-files-o"></i> Uploaded Documents  </h4>
   </div><!-- /.col -->
 </div>
@@ -459,14 +459,14 @@ $(document).ready(function(){
 <div class="col-xs-12 col-lg-12 no-padding" style="display:block">
   <div class="row">
     <div class="col-xs-12">
-      <h4 class="edusec-border-bottom-warning page-header edusec-profile-title-1">  
+      <h4 class="edu-border-bottom-warning page-header edu-profile-title-1">  
     <i class="fa fa-upload"></i> Upload Remaining Documents      </h4>
     </div><!-- /.col -->
   </div>
 
   <div class="box-default box view-item col-xs-12 col-lg-12">
     <div class="stu-docs-form">       
-  <form id="stu-docs-form" action="/edusec/index.php?r=student%2Fstu-master%2Fadddocs" method="post" enctype="multipart/form-data">
+  <form id="stu-docs-form" action="/edu/index.php?r=student%2Fstu-master%2Fadddocs" method="post" enctype="multipart/form-data">
 <input type="hidden" name="_csrf" value="aHJiWkVvemkbIRNrPDgQWl0kBRUnKTskNwJPLjMfFh8jKhMfdjAAIA==">       <div class="col-xs-12 col-sm-12 col-lg-12" style="background-color:#f4f4f4; border-bottom:2px solid #ddd;margin-bottom:2%;padding:1%">
         <div class="col-xs-12 col-sm-4 col-lg-4">
       <div class="form-group field-studocs-stu_docs_category_id_temp-1">
@@ -582,7 +582,7 @@ $(document).ready(function(){
         </div>
 
     </div>
-      <div class="form-group col-xs-12 col-sm-3 edusecArLangCss" style="display:block;margin-top: 10px;">
+      <div class="form-group col-xs-12 col-sm-3 eduArLangCss" style="display:block;margin-top: 10px;">
     <button type="submit" class="btn btn-success btn-block"><i class="fa fa-upload"></i>Upload</button>    </div>
   </form>    </div>
   </div>
@@ -594,7 +594,7 @@ $(document).ready(function(){
 
 <div class="row">
   <div class="col-xs-12">
-  <h4 class="edusec-border-bottom-warning page-header edusec-profile-title-1">  
+  <h4 class="edu-border-bottom-warning page-header edu-profile-title-1">  
     <i class="fa fa-inr"></i> Current Fees Details  </h4>
   </div><!-- /.col -->
 </div>
@@ -615,7 +615,7 @@ $(document).ready(function(){
 
 <div class="row">
   <div class="col-xs-12">
-  <h4 class="edusec-border-bottom-warning page-header edusec-profile-title-1">  
+  <h4 class="edu-border-bottom-warning page-header edu-profile-title-1">  
     <i class="fa fa-inr"></i> Student Payment History </h4>
   </div><!-- /.col -->
 </div>
@@ -624,7 +624,7 @@ $(document).ready(function(){
      <div class="box-body table-responsive no-padding">
 <div id="w1"><div id="w2" class="grid-view">
 <table class="table table-striped table-bordered"><thead>
-<tr><th>#</th><th><a class="desc" href="/edusec/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_id" data-sort="fees_pay_tran_id">Receipt No.</a></th><th><a href="/edusec/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_date" data-sort="fees_pay_tran_date">Payment Date</a></th><th><a href="/edusec/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_collect_id" data-sort="fees_pay_tran_collect_id">Fees Collect Name</a></th><th><a href="/edusec/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_mode" data-sort="fees_pay_tran_mode">Payment Mode</a></th><th><a href="/edusec/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_cheque_no" data-sort="fees_pay_tran_cheque_no">Cheque No</a></th><th><a href="/edusec/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_amount" data-sort="fees_pay_tran_amount">Amount</a></th></tr>
+<tr><th>#</th><th><a class="desc" href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_id" data-sort="fees_pay_tran_id">Receipt No.</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_date" data-sort="fees_pay_tran_date">Payment Date</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_collect_id" data-sort="fees_pay_tran_collect_id">Fees Collect Name</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_mode" data-sort="fees_pay_tran_mode">Payment Mode</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_cheque_no" data-sort="fees_pay_tran_cheque_no">Cheque No</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_amount" data-sort="fees_pay_tran_amount">Amount</a></th></tr>
 </thead>
 <tbody>
 <tr><td colspan="7"><div class="empty">No fees results found.</div></td></tr>
