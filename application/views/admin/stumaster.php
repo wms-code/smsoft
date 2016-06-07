@@ -121,28 +121,28 @@
       </tr>
       <tr>
         <th>Name</th>
-        <td>arun kumar</td>
+        <td><?= $first_name ?> <?=$last_name ?></td>
       </tr>
       <tr>
         <th>Course</th>
-        <td>bca</td>
+        <td><?=$course ?></td>
       </tr>
       <tr>
-        <th>Batch</th>
-        <td>BCA-Batch-01</td>
+        <th>Degree</th>
+        <td><?=$degree?></td>
       </tr>
       <tr>
         <th>Email ID</th>
-        <td>gagzzg@gmai.com</td>
+        <td><?=$email_id?></td>
       </tr>
       <tr>
         <th>Mobile No</th>
-        <td>7879745852</td>
+        <td><?=$mobile?></td>
       </tr>
       <tr>
         <th>Status</th>
         <td>
-                    <span class="label label-success">Active</span>
+                    <span class="label label-success"><?=$status?></span>
                   </td>
       </tr>
     </tbody></table>
@@ -173,35 +173,35 @@
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="col-md-3 col-sm-3 col-xs-6 edu-profile-label eduArLangCss">Title</div>
-    <div class="col-md-9 col-sm-9 col-xs-6 edu-profile-text">Mr.</div>
+    <div class="col-md-9 col-sm-9 col-xs-6 edu-profile-text"><?=$title?></div>
   </div>
 
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">First Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text">arun</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$first_name?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Last Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text">kumar</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$last_name?></div>
     </div>
   </div>
 
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Middle Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text">s</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$middle_name?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Gender</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text">MALE</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$gender?></div>
     </div>
   </div>
 
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Date of Birth</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text">08-06-2016</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?php echo date("d-m-Y",strtotime($dob)); ?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Nationality</div>
@@ -213,7 +213,7 @@
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Admission Category</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text">Not Set</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$adm_category?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Religion</div>
@@ -255,42 +255,42 @@
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Course</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text">BCA</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$course?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Batch</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text">BCA-Batch-01</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">Not Set</div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Section</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text">BCA-Section-01</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$section?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Admission Date</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text">02-06-2016</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?php echo date("d-m-Y",strtotime($adm_date)); ?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Student Status</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text">General/Default</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$status?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Active/InActive</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text">Active</div>
+  <div class="col-md-8 col-xs-8 edu-profile-text">Not Set</div>
   </div>
 </div>
   
