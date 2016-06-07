@@ -54,6 +54,13 @@
                     <input name="course" type="text" class="form-control" id="course" placeholder="course" >
                   </div>
                 </div>
+                 <div class="form-group">
+                  <label for="course" class="col-sm-3 control-label">Course Alias</label>
+
+                  <div class="col-sm-9">
+                    <input name="course_alias" type="text" class="form-control" id="course" placeholder="course" >
+                  </div>
+                </div>
                   <div class="form-group">
                   <label for="course" class="col-sm-3 control-label">Course Intake</label>
 
@@ -89,6 +96,13 @@
                   </div>
                 </div>
               </div>
+               <div class="form-group">
+                  <label for="course" class="col-sm-3 control-label">Course Alias</label>
+
+                  <div class="col-sm-9">
+                    <input  type="text" class="form-control" id="course" placeholder="<?php echo $course->course_alias ?>" disabled>
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="course" class="col-sm-3 control-label">Course Intake</label>
 
@@ -123,6 +137,13 @@
                   </div>
                 </div>
               </div>
+              <div class="form-group">
+                  <label for="course" class="col-sm-3 control-label">course Alias</label>
+
+                  <div class="col-sm-9">
+                    <input name="course_alias" type="text" class="form-control" id="course" value="<?php echo $course->course_alias ?>" >
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="course" class="col-sm-3 control-label">course Intake</label>
 
@@ -154,8 +175,9 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>course Id</th>
-                  <th>course Name</th>
+                  <th>Course Id</th>
+                  <th>Course Name</th>
+                  <th>Alias</th>
                   <th>course Intake</th>
                   <th>View</th>
                   <th>Edit</th>
@@ -171,6 +193,7 @@
                   <tr>
                   <td>  $course->course_id  </td>
                   <td>  $course->course_name </td>
+                   <td>  $course->course_alias </td>
                    <td>  $course->course_intake </td>
                   <td> <a href="{$burl}view/{$course->course_id}"  class="btn btn-primary btn-sm">View</a></td>
                   <td> <a href="{$burl}edit/{$course->course_id}"  class="btn btn-success btn-sm">Edit</a></td>
@@ -183,8 +206,9 @@ EOT;
                 </tbody>
                 <tfoot>
                 <tr>
-                 <th>course Id</th>
-                  <th>course Name</th>
+                 <th>Course Id</th>
+                  <th>Course Name</th>
+                  <th>Alias</th>
                   <th>course Intake</th>
                   <th>View</th>
                   <th>Edit</th>

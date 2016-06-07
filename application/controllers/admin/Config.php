@@ -75,7 +75,7 @@ class Config extends CI_Controller {
 		if(isset($_POST['nationality'])&& $_POST['nationality'] !=""){	
 			$data['nationality_name'] = $_POST['nationality']; //$_SESSION['username']  
 			$data['entry_by'] = "test_user";
-			$this->db->insert('nationality',$data);
+			$this->db->insert('nationalities',$data);
 		}
 
 
@@ -87,27 +87,27 @@ class Config extends CI_Controller {
 				$data['nationality_name']=$_POST['nationality_name'];
 				$data['update_by'] = "test_user";  //$_SESSION['username']
 				$this->db->where('nationality_id', $_POST['nationality_id']);
-				$this->db->update('nationality', $data);
+				$this->db->update('nationalities', $data);
 				$url=base_url('admin/config/nationality');
 				 header("Location: $url");
 
 			}
 			elseif ($this->uri->segment(4)=='delete') {
 			$this->db->where('nationality_id',$this->uri->segment(5));
-			$this->db->delete('nationality');	
+			$this->db->delete('nationalities');	
 			$url=base_url('admin/config/nationality');
 			header("Location: $url");
 			}
 
 		//get view page and edit page nationality
 		$this->db->where('nationality_id',$this->uri->segment(5));
-		$query=$this->db->get('nationality');
+		$query=$this->db->get('nationalities');
 		$data['national']=$query->result()[0];
 		}
 
 	
 		//get all nationality list
-		$query = $this->db->query('SELECT nationality_id, nationality_name FROM nationality');
+		$query = $this->db->query('SELECT nationality_id, nationality_name FROM nationalities');
 		$data['nationality'] = $query->result();
 		$this->load->view('admin/config/nationality',$data);
 
@@ -117,7 +117,8 @@ class Config extends CI_Controller {
 	{
 		//create a new course 
 		if(isset($_POST['course'])&& $_POST['course'] !=""){	
-			$data['course_name'] = $_POST['course']; //$_SESSION['username']  
+			$data['course_name'] = $_POST['course']; //$_SESSION['username'] 
+			$data['course_alias'] = $_POST['course_alias'];
 			$data['course_intake']=$_POST['course_intake'];
 			$data['entry_by'] = "test_user";
 			$this->db->insert('courses',$data);
@@ -130,6 +131,7 @@ class Config extends CI_Controller {
 			if(isset($_POST['course_id'])){	
 				$data['course_id']=$_POST['course_id'];
 				$data['course_name']=$_POST['course_name'];
+				$data['course_alias'] = $_POST['course_alias'];
 				$data['course_intake']=$_POST['course_intake'];
 				$data['update_by'] = "test_user";  //$_SESSION['username']
 				$this->db->where('course_id', $_POST['course_id']);
@@ -206,6 +208,7 @@ class Config extends CI_Controller {
 		//create a new country 
 		if(isset($_POST['degree'])&& $_POST['degree'] !=""){	
 			$data['degree_name'] = $_POST['degree']; //$_SESSION['username']  
+			$data['degree_alias']=$_POST['degree_alias'];
 			$data['entry_by'] = "test_user";
 			$this->db->insert('degrees',$data);
 		}
@@ -217,6 +220,7 @@ class Config extends CI_Controller {
 			if(isset($_POST['degree_id'])){	
 				$data['degree_id']=$_POST['degree_id'];
 				$data['degree_name']=$_POST['degree_name'];
+				$data['degree_alias']=$_POST['degree_alias'];
 				$data['update_by'] = "test_user";  //$_SESSION['username']
 				$this->db->where('degree_id', $_POST['degree_id']);
 				$this->db->update('degrees', $data);
@@ -239,7 +243,7 @@ class Config extends CI_Controller {
 
 	
 		//get all countries list
-		$query = $this->db->query('SELECT degree_id, degree_name FROM degrees');
+		$query = $this->db->query('SELECT degree_id,degree_name,degree_alias FROM degrees');
 		$data['degrees'] = $query->result();
 		$this->load->view('admin/config/degree',$data);
 

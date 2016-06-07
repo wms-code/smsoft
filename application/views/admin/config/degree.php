@@ -48,10 +48,17 @@
             <form class="form-horizontal" method="post" action="<?php echo base_url('admin/config/degree'); ?> ">
               <div class="modal-body">
                 <div class="form-group">
-                  <label for="degree" class="col-sm-3 control-label">Admission Degree</label>
+                  <label for="degree" class="col-sm-3 control-label">Degree Name</label>
 
                   <div class="col-sm-9">
-                    <input name="degree" type="text" class="form-control" id="degree" placeholder="Admission degree" >
+                    <input name="degree" type="text" class="form-control" id="degree" placeholder="degree name" >
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label for="degree" class="col-sm-3 control-label">Degree Alias</label>
+
+                  <div class="col-sm-9">
+                    <input name="degree_alias" type="text" class="form-control" id="degree" placeholder="degree alias" >
                   </div>
                 </div>
               </div>
@@ -75,13 +82,21 @@
               <form class="form-horizontal">
               <div class="modal-body">
                 <div class="form-group">
-                  <label for="degree" class="col-sm-3 control-label">Degree</label>
-
+                  <label for="degree" class="col-sm-3 control-label">Degree Name</label>
                   <div class="col-sm-9">
                     <input type="text"   id="disabledTextInput" class="form-control" id="degree" placeholder="<?php echo $degree->degree_name ?>" disabled>
                   </div>
                 </div>
+                  <div class="form-group">
+                  <label for="degree" class="col-sm-3 control-label">Degree Alias</label>
+                  <div class="col-sm-9">
+                    <input type="text"   id="disabledTextInput" class="form-control" id="degree" placeholder="<?php echo $degree->degree_alias ?>" disabled>
+                 
+                </div>
               </div>
+              </div>
+             
+
               <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
               </div>
@@ -101,14 +116,21 @@
               <form class="form-horizontal" method="post" action="">
               <div class="modal-body">
                 <div class="form-group">
-                  <label for="degree" class="col-sm-3 control-label">Admission degree</label>
+                  <label for="degree" class="col-sm-3 control-label">degree</label>
 
                   <div class="col-sm-9">
                     <input type="hidden" name="degree_id"  value="<?php echo $degree->degree_id ?>" >
-                    <input type="text" name="degree_name" class="form-control" id="degreeedit" value="<?php echo $degree->degree_name ?>" >
+                    <input type="text" name="degree_alias" class="form-control" id="degreeedit" value="<?php echo $degree->degree_name ?>" >
                   </div>
                 </div>
-              </div>
+                 <div class="form-group">
+                  <label for="degree" class="col-sm-3 control-label">Degree Alias</label>
+
+                  <div class="col-sm-9">
+                    <input type="hidden" name="degree_id"  value="<?php echo $degree->degree_id ?>" >
+                    <input type="text" name="degree_alias" class="form-control" id="degreeedit" value="<?php echo $degree->degree_alias ?>" >
+                  </div>
+                </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Save changes</button>
@@ -134,7 +156,8 @@
                 <thead>
                 <tr>
                   <th>Degree Id</th>
-                  <th>Degree</th>
+                  <th>Degree Name</th>
+                  <th>Alias</th>
                   <th>View</th>
                   <th>Edit</th>
                   <th>Delete</th>
@@ -149,6 +172,7 @@
                   <tr>
                   <td>  $degree->degree_id  </td>
                   <td>  $degree->degree_name </td>
+                  <td>  $degree->degree_alias </td>
                   <td> <a href="{$burl}view/{$degree->degree_id}"  class="btn btn-primary btn-sm">View</a></td>
                   <td> <a href="{$burl}edit/{$degree->degree_id}"  class="btn btn-success btn-sm">Edit</a></td>
                   <td> <a href="{$burl}delete/{$degree->degree_id}" class="btn btn-danger btn-sm">Delete</a></td>
@@ -160,8 +184,9 @@ EOT;
                 </tbody>
                 <tfoot>
                 <tr>
-                 <th>Degree Id</th>
-                  <th>Degree</th>
+                  <th>Degree Id</th>
+                  <th>Degree Name</th>
+                  <th>Alias</th>
                   <th>View</th>
                   <th>Edit</th>
                   <th>Delete</th>
