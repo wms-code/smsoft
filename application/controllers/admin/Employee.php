@@ -35,7 +35,7 @@ class Employee extends CI_Controller {
 			$data['emp_id']=$this->input->post('emp_id');
 			$data['title']=$this->input->post('title');
 			$data['first_name']=$this->input->post('first_name');
-			$data['middle_name']=$this->input->post('middle_name');
+			//$data['middle_name']=$this->input->post('middle_name');
 			$data['last_name']=$this->input->post('last_name');
 			$data['gender']=$this->input->post('gender');
 			$data['email_id']=$this->input->post('email_id');
@@ -93,7 +93,7 @@ class Employee extends CI_Controller {
 			
 			$data['title']=$this->input->post('title');
 			$data['first_name']=$this->input->post('first_name');
-			$data['middle_name']=$this->input->post('middle_name');
+			//$data['middle_name']=$this->input->post('middle_name');
 			$data['last_name']=$this->input->post('last_name');
 			$data['gender']=$this->input->post('gender');
 			$data['email_id']=$this->input->post('email_id');

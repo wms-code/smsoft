@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Student Edit</title>
+  <title>New Employee</title>
   <?php $this->load->view('admin/employeelist'); ?>
 
 <script type="text/javascript">
@@ -58,9 +58,7 @@
             <div class="help-block"></div>
           </div>      
       </div>
-  </div>
-  
-  <div class="row">
+ 
     <div class="col-md-4">
       <div class="form-group">
       <label>Employee First Name</label>
@@ -69,13 +67,13 @@
       </div> 
       </div>
 
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
       <div class="form-group">
       <label>Employee Middle Name</label>
       <input type="text" class="form-control" name="middle_name">
       <div class="help-block"></div>
       </div> 
-      </div>
+      </div> -->
 
       <div class="col-md-4">
       <div class="form-group">
