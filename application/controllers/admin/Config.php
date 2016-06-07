@@ -289,6 +289,53 @@ class Config extends CI_Controller {
 	}
 
 
+	public function bank()
+	{
+		//create a new country 
+		if(isset($_POST['bank'])&& $_POST['bank'] !=""){	
+			$data['bank_name'] = $_POST['bank']; //$_SESSION['username']  
+			$data['bank_alias']=$_POST['bank_alias'];
+			$data['updated_by'] = "test_user";
+			$this->db->insert('banks',$data);
+		}
+
+
+		if ($this->uri->segment(4)) {
+
+			//edit a country
+			if(isset($_POST['bank_id'])){	
+				$data['bank_id']=$_POST['bank_id'];
+				$data['bank_name']=$_POST['bank_name'];
+				$data['bank_alias']=$_POST['bank_alias'];
+				$data['updated_by'] = "test_user";  //$_SESSION['username']
+				$this->db->where('bank_id', $_POST['bank_id']);
+				$this->db->update('banks', $data);
+				$url=base_url('admin/config/bank');
+				 header("Location: $url");
+
+			}
+			elseif ($this->uri->segment(4)=='delete') {
+			$this->db->where('bank_id',$this->uri->segment(5));
+			$this->db->delete('banks');	
+			$url=base_url('admin/config/bank');
+			header("Location: $url");
+			}
+
+		//get view page and edit page country
+		$this->db->where('bank_id',$this->uri->segment(5));
+		$query=$this->db->get('banks');
+		$data['bank']=$query->result()[0];
+		}
+
+	
+		//get all countries list
+		$query = $this->db->query('SELECT bank_id,bank_name,bank_alias FROM banks');
+		$data['banks'] = $query->result();
+		$this->load->view('admin/config/bank',$data);
+
+	}
+
+
 }
 
 /* End of file Config.php */
