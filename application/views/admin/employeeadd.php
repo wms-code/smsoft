@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Student Edit</title>
-  <?php $this->load->view('admin/studentlist'); ?>
+  <?php $this->load->view('admin/employeelist'); ?>
 
 <script type="text/javascript">
     $(window).load(function(){
@@ -29,7 +29,6 @@
           
 <section class="content">
  
-
 <div class="box-body">
 
     <form id="stu-master-form" action="" method="post">
@@ -37,8 +36,8 @@
     <div class="row">
       <div class="col-md-4">
       <div class="form-group">
-      <label>Student Roll / Admission No</label>
-      <input type="text" class="form-control" name="roll_no">
+      <label>Employee ID</label>
+      <input type="text" class="form-control" name="emp_id">
       <div class="help-block"></div>
       </div>      
     </div>
@@ -64,7 +63,7 @@
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
-      <label>Student First Name</label>
+      <label>Employee First Name</label>
       <input type="text" class="form-control" name="first_name">
       <div class="help-block"></div>
       </div> 
@@ -72,7 +71,7 @@
 
       <div class="col-md-4">
       <div class="form-group">
-      <label>Student Middle Name</label>
+      <label>Employee Middle Name</label>
       <input type="text" class="form-control" name="middle_name">
       <div class="help-block"></div>
       </div> 
@@ -80,7 +79,7 @@
 
       <div class="col-md-4">
       <div class="form-group">
-      <label>Student Last Name</label>
+      <label>Employee Last Name</label>
       <input type="text" class="form-control" name="last_name">
       <div class="help-block"></div>
       </div> 
@@ -133,20 +132,88 @@
       </div>
 
 
-    
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Marital Status</label>
+      <select name="marital_status" class="form-control" >
+      <option value="">--- Select---</option>
+      <option value="Married">Married</option>
+      <option value="Un Married">Un Married</option>
+      </select>
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
 
   </div>
-  <h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Admission Details  </h2>
+  <div class="row">
+
+    
+
+
+
+   
+    <div class="col-md-12">
+      <div class="form-group">
+      <label>Address</label>
+     <textarea class="form-control" name="address"></textarea> 
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+  </div>
+
+
+    <div class="row">
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>City</label>
+      <input type="text" class="form-control" name="city">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+   
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Country</label>
+      <select name="country" class="form-control">
+        <option value="">---Select---</option>
+        <?php foreach($countr->result() as $country) { ?>
+        <option value="<?=$country->country_name?>"><?=$country->country_name?></option> 
+        <?php } ?>
+      </select>
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+     <div class="col-md-4">
+      <div class="form-group">
+      <label>Nationality</label>
+      <select name="nationality_name" class="form-control">
+        <option value="">---Select---</option>
+        <?php foreach($nation->result() as $nationality) { ?>
+        <option value="<?=$nationality->nationality_name?>"><?=$nationality->nationality_name?></option> 
+        <?php } ?>
+      </select>
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
+    </div>
+  <h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Appointment Details  </h2>
   
   <div class="row">
   
     <div class="col-sm-4">
         <div class="form-group field-stuinfo-stu_title">
-            <label>Admission Category</label>
-            <select name="adm_category" class="form-control">
+            <label>Appointment Category</label>
+            <select name="app_category" class="form-control">
             <option value="">---Select---</option>
-            <?php foreach($adm->result() as $adm1) { ?>
-            <option value="<?=$adm1->adm_category?>"><?=$adm1->adm_category?></option> 
+            <?php foreach($appoint->result() as $appointment) { ?>
+            <option value="<?=$appointment->app_category?>"><?=$appointment->app_category?></option> 
             <?php } ?>
             </select>
             <div class="help-block"></div>
@@ -155,24 +222,20 @@
 
     <div class="col-md-4">
       <div class="form-group">
-      <label>Admission Date</label>
-      <input type="date" class="form-control" name="adm_date">
+      <label>Appointment Date</label>
+      <input type="date" class="form-control" name="app_date">
       <div class="help-block"></div>
       </div> 
     </div>
 
-<div class="col-md-4">
+ <div class="col-md-4">
       <div class="form-group">
-      <label>Entry Level</label>
-      <select name="entry_level" class="form-control">
-        <option value="">---Select---</option>
-        <?php foreach($entrys->result() as $entrys1) { ?>
-        <option value="<?=$entrys1->entry_level?>"><?=$entrys1->entry_level?></option> 
-        <?php } ?>
-      </select>
+      <label>Experience</label>
+      <input type="text" class="form-control" name="experience">
       <div class="help-block"></div>
       </div> 
     </div>
+
 
   </div>
 
@@ -203,73 +266,50 @@
       <div class="help-block"></div>
       </div> 
     </div>
-
-
+    
     <div class="col-md-4">
       <div class="form-group">
-      <label>Section</label>
-      <input type="text" class="form-control" name="section">
-      <div class="help-block"></div>
-      </div> 
-    </div>
-    </div>
-
-<h2 class="page-header edusec-page-header-1"><i class="fa fa-info-circle"></i> Fees Details  </h2>
-  
-  <div class="row">
-<?php foreach($fees->result() as $fee)  ?>
-    <div class="col-md-4">
-      <div class="form-group">
-      <label>College Fees</label>
-      <input type="text" class="form-control" name="college_fee">
-      <div class="help-block"></div>
-      </div> 
-    </div>
-
-    <div class="col-md-4">
-      <div class="form-group">
-      <label>Transport Fees</label>
-      <input type="text" class="form-control" name="transport_fee">
-      <div class="help-block"></div>
-      </div> 
-    </div>
-
-    <div class="col-md-4">
-      <div class="form-group">
-      <label>Hostel Fees</label>
-      <input type="text" class="form-control" name="hostel_fee">
-      <div class="help-block"></div>
-      </div> 
-    </div>
-
-  </div>
-
-<div class="row">
-
-    <div class="col-md-4">
-      <div class="form-group">
-      <label>Tution Fees</label>
-      <input type="text" class="form-control" name="tution_fee">
-      <div class="help-block"></div>
-      </div> 
-    </div>
-
-    <div class="col-md-4">
-      <div class="form-group">
-      <label>Others Fees</label>
-      <input type="text" class="form-control" name="fee" placeholder="specify the category">
-      <div class="help-block"></div>
-      </div> 
-    </div>
-
-    <div class="col-md-4">
-      <div class="form-group"><label>&nbsp;</label>
-       <input type="text" class="form-control" name="other_fee">
+      <label>Designation</label>
+      <select name="designation" class="form-control">
+        <option value="">---Select---</option>
+        <?php foreach($design->result() as $designation) { ?>
+        <option value="<?=$designation->entry_level?>"><?=$designation->entry_level?></option> 
+        <?php } ?>
+      </select>
       <div class="help-block"></div>
       </div> 
     </div>
     
+    
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="row">
+
+   
+
+    <div class="col-md-4">
+      <div class="form-group">
+      <label>Salary</label>
+      <input type="text" class="form-control" name="salary">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
   </div>
+
+
 
 
   
