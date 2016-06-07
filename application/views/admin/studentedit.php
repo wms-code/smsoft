@@ -37,17 +37,12 @@
     <div class="row">
       <div class="col-md-4">
       <div class="form-group">
-      <label>Student Roll / Admission No</label>
+      <label>Roll / Admission No</label>
       <input type="text" class="form-control" name="roll_no" value="<?=$row->roll_no?>" readonly>
       <div class="help-block"></div>
       </div>      
     </div>
-
-      
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-4">
+<div class="col-sm-4">
         <div class="form-group field-stuinfo-stu_title">
             <label>Title</label>
             <select name="title" class="form-control">
@@ -59,6 +54,11 @@
             <div class="help-block"></div>
           </div>      
       </div>
+      
+    </div>
+    
+    <div class="row">
+      
   </div>
   
   <div class="row">
@@ -70,13 +70,7 @@
       </div> 
       </div>
 
-      <div class="col-md-4">
-      <div class="form-group">
-      <label>Student Middle Name</label>
-      <input type="text" class="form-control" name="middle_name" value="<?=$row->middle_name?>">
-      <div class="help-block"></div>
-      </div> 
-      </div>
+     
 
       <div class="col-md-4">
       <div class="form-group">
@@ -85,6 +79,15 @@
       <div class="help-block"></div>
       </div> 
       </div>
+
+      <div class="col-md-4">
+      <div class="form-group">
+      <label>Mobile No</label>
+      <input type="text" class="form-control" name="mobile" value="<?=$row->mobile?>">
+      <div class="help-block"></div>
+      </div> 
+    </div>
+
   </div>
   
   <div class="row">
@@ -110,19 +113,6 @@
       <div class="help-block"></div>
       </div> 
     </div>
-
-
-    <div class="col-md-4">
-      <div class="form-group">
-      <label>Mobile No</label>
-      <input type="text" class="form-control" name="mobile" value="<?=$row->mobile?>">
-      <div class="help-block"></div>
-      </div> 
-    </div>
-
-  </div>
-  
-  <div class="row">
   
     <div class="col-sm-4">
         <div class="form-group field-stuinfo-stu_title">
