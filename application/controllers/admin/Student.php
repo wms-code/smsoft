@@ -22,7 +22,8 @@ class Student extends CI_Controller {
 	public function index()
 	{
 
-		$this->load->view('admin/home');
+		$data['query']=$this->db->get('stuinfo');
+		$this->load->view('admin/studentlist',$data);;
 
 	}
 
@@ -80,12 +81,7 @@ class Student extends CI_Controller {
 				
 	}
 	
-	public function plist()
-	{
-	
-		$data['query']=$this->db->get('stuinfo');
-		$this->load->view('admin/studentlist',$data);
-	}
+
 
 	public function studentremove()
 	{
@@ -156,6 +152,12 @@ class Student extends CI_Controller {
 			$this->load->view('admin/studentedit',$data);
 		}
 
+	}
+
+
+	public function master()
+	{
+		$this->load->view('admin/stumaster');
 	}
 
 

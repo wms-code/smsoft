@@ -19,11 +19,7 @@
 </ul>    </section>
 
    <section class="content">
-      <div class="callout callout-info">
-        <h4>Tip!</h4>
-
-        <p>crolling.</p>
-      </div>
+    
       <!-- Default box -->
       <div class="box">
             <div class="box-header">
@@ -44,7 +40,7 @@
                   <th>Name</th>
                   <th>Course</th>
                   <th>Section</th>
-                  <th>Admission Category</th>
+                  <th>Admission</th>
                   <th>Mobile</th>
                   <th>Email</th>
                   <th>Action</th>
