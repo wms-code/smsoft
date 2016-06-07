@@ -80,7 +80,7 @@ class Employee extends CI_Controller {
 	{
 		$emp_id=$this->uri->segment(4);
 		$this->db->where('emp_id',$emp_id);
-		$this->db->delete('emp_info');
+		$this->db->delete('empinfo');
 		$url = base_url('admin/employee/');
         header("Location: $url");
 	}
@@ -90,7 +90,7 @@ class Employee extends CI_Controller {
 		
 		if ($this->input->post('submit'))
 		{
-			$data['emp_id']=$this->input->post('emp_id');
+			
 			$data['title']=$this->input->post('title');
 			$data['first_name']=$this->input->post('first_name');
 			$data['middle_name']=$this->input->post('middle_name');
@@ -111,9 +111,9 @@ class Employee extends CI_Controller {
 			$data['designation']=$this->input->post('designation');			
 			$data['experience']=$this->input->post('experience');
 			$data['salary']=$this->input->post('salary');
-			$data['entry_by']="hi";
+			$data['update_by']="hi";
 
-			
+			$emp_id=$this->uri->segment(4);
 			$this->db->where('emp_id',$emp_id);
 			$this->db->update('empinfo', $data);
 
@@ -122,7 +122,7 @@ class Employee extends CI_Controller {
 		}
 		else {
 			
-			$data['query']=$this->db->get('stuinfo');
+			$data['query']=$this->db->get('empinfo');
 			$data['nation']=$this->db->get('nationalities');
 			$data['countr']=$this->db->get('countries');
 			$data['degr']=$this->db->get('degrees');

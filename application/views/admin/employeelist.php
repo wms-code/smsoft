@@ -12,10 +12,9 @@
   <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 302px;">
      <section class="content-header">
-        <h1><i class="fa fa-plus-square"></i> Students List <small> All Students </small></h1>
+        <h1><i class="fa fa-plus-square"></i> Employees List <small> All Employees </small></h1>
         <ul class="breadcrumb"><li><a href="<?php echo base_url() ?>admin"><i class="fa fa-home"></i>Home</a></li>
-<li><a href="<?php echo base_url() ?>admin/student">Student</a></li>
-<li><a href="<?php echo base_url() ?>admin/student/plist">Students List</a></li>
+<li><a href="<?php echo base_url() ?>admin/employee">Employees List</a></li>
 </ul>    </section>
 
    <section class="content">
@@ -28,9 +27,9 @@
       <div class="box">
             <div class="box-header">
               <table>
-              <tr><td width="90%"><h3 class="box-title">Students List</h3></td>
+              <tr><td width="90%"><h3 class="box-title">Employees List</h3></td>
               <td width="10%">
-              <a href="<?php echo base_url() ?>admin/student/create" accesskey="n">Add New Record</a>
+              <a href="<?php echo base_url() ?>admin/employee/create" accesskey="n">Add New Record</a>
               </td></tr>
               </table>
             </div>
