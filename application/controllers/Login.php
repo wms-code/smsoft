@@ -1,56 +1,33 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
 
 	public function index()
 	{
-		
 		if ($this->input->post('username')) {
-			$this->form_validation->set_rules('username', 'Email Id','required|valid_email');
-            $this->form_validation->set_rules('password', 'Password', 'required');
-	  		if ($this->form_validation->run() == FALSE)
-            {
-
-                   $this->load->view('login');
-            }
-            else
-            {
-                $username = $this->input->post('username');
+		// set validation rules
+		$this->form_validation->set_rules('username', 'Username', 'required|alpha_numeric');
+		$this->form_validation->set_rules('password', 'Password', 'required');		 
+			if ($this->form_validation->run() == TRUE){
+				$username = $this->input->post('username');
 				$password = $this->input->post('password');
-				$this->db->where('user_email', $username);
-				$this->db->where('user_password', $password);			
-				$res = $this->db->get('users');
+				$this->db->where('username', $username);
+				$this->db->where('password', $password);			
+				$res = $this->db->get('user');
 				if($res->num_rows() == 1){
 					$userid=$res->result()[0]->user_id;
-					$usertype=$res->result()[0]->role_id;
+					$usertype=$res->result()[0]->usertype;
 					$this->session->set_userdata('userid', $userid);
 					$this->session->set_userdata('username', $username);
 					$this->session->set_userdata('usertype', $usertype);
-					if ($usertype==1) {					
-					$url = base_url('admin');
-					}
-					else
-					{
-						$url = base_url();
-					}
-
-
-
+					$url = base_url($usertype);
 					header("Location: $url");				
-				}  
-            }
-	}
-	else
-	{
-       $this->load->view('login');
-		
-	}
-
+				}
+			}	
+		}	
+	$this->load->view('login');	
 	}
 
 
@@ -58,8 +35,7 @@ class Login extends CI_Controller {
 	{
 		$this->session->unset_userdata('username');
 		$this->session->sess_destroy();
-		if($_SESSION['usertype']=="admin") $url = base_url("admin/");
-		else $url=base_url();
+		$url=base_url('login');
 		header("Location: $url");
 		
 	}
@@ -67,28 +43,7 @@ class Login extends CI_Controller {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+}
 
 /* End of file Login.php */
 /* Location: ./application/controllers/Login.php */

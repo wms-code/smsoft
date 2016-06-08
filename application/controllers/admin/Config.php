@@ -340,4 +340,95 @@ class Config extends CI_Controller {
 	}
 
 
+
+	public function designation()
+	{
+		//create a new designation 
+		if(isset($_POST['designation'])&& $_POST['designation'] !=""){	
+			$data['designation_name'] = $_POST['designation']; //$_SESSION['username']  
+			$data['entry_by'] = "test_user";
+			$this->db->insert('designation',$data);
+		}
+
+
+		if ($this->uri->segment(4)) {
+
+			//edit a designation
+			if(isset($_POST['designation_id'])){	
+				$data['designation_id']=$_POST['designation_id'];
+				$data['designation_name']=$_POST['designation_name'];
+				$data['update_by'] = "test_user";  //$_SESSION['username']
+				$this->db->where('designation_id', $_POST['designation_id']);
+				$this->db->update('designation', $data);
+				$url=base_url('admin/config/designation');
+				 header("Location: $url");
+
+			}
+			elseif ($this->uri->segment(4)=='delete') {
+			$this->db->where('designation_id',$this->uri->segment(5));
+			$this->db->delete('designation');	
+			$url=base_url('admin/config/designation');
+			header("Location: $url");
+			}
+
+		//get view page and edit page designation
+		$this->db->where('designation_id',$this->uri->segment(5));
+		$query=$this->db->get('designation');
+		$data['designationrow']=$query->result()[0];
+		}
+
+		$query = $this->db->query('SELECT designation_id, designation_name FROM designation');
+		$data['designation'] = $query->result();
+		$this->load->view('admin/config/designation',$data);
+
+	
+
+}
+
+public function appointment()
+	{
+		//create a new appointment 
+		if(isset($_POST['appscategory'])&& $_POST['appscategory'] !=""){	
+			//echo "yes";
+			//exit;
+			$data['app_category'] = $_POST['appscategory']; //$_SESSION['username']  
+			$data['entry_by'] = "test_user";
+			$this->db->insert('appointment',$data);
+		}
+
+
+		if ($this->uri->segment(4)) {
+
+			//edit a appointment
+			if(isset($_POST['app_id'])){	
+				$data['app_id']=$_POST['app_id'];
+				$data['app_category']=$_POST['app_category'];
+				$data['update_by'] = "test_user";  //$_SESSION['username']
+				$this->db->where('app_id', $_POST['app_id']);
+				$this->db->update('appointment', $data);
+				$url=base_url('admin/config/appointment');
+				 header("Location: $url");
+
+			}
+			elseif ($this->uri->segment(4)=='delete') {
+			$this->db->where('app_id',$this->uri->segment(5));
+			$this->db->delete('appointment');	
+			$url=base_url('admin/config/appointment');
+			header("Location: $url");
+			}
+
+		//get view page and edit page appointment
+		$this->db->where('app_id',$this->uri->segment(5));
+		$query=$this->db->get('appointment');
+		$data['appointmentrow']=$query->result()[0];
+		}
+
+		$query = $this->db->query('SELECT app_id, app_category FROM appointment');
+		$data['appointment'] = $query->result();
+		$this->load->view('admin/config/appointment',$data);
+
+	
+
+}
+
 }

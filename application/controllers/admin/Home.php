@@ -8,14 +8,14 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 
-		/*if(!isset($_SESSION['username'])){
+		if(!isset($_SESSION['username'])){
         	$url = base_url('login');
         	header("Location: $url");
         }
-       elseif ($_SESSION['usertype']!="1") {
+       elseif ($_SESSION['usertype']!="admin") {
         	$url = base_url();
         	header("Location: $url");
-        }*/
+        }
 	}
 
 	 

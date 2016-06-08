@@ -271,7 +271,7 @@
       <select name="designation" class="form-control">
         <option value="<?=$row->designation?>"><?=$row->designation?></option>
         <?php foreach($design->result() as $designation) { ?>
-        <option value="<?=$designation->entry_level?>"><?=$designation->entry_level?></option> 
+        <option value="<?=$designation->designation_name?>"><?=$designation->designation_name?></option> 
         <?php } ?>
       </select>
       <div class="help-block"></div>
