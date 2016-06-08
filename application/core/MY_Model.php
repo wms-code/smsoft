@@ -1,8 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends MY_Controller {
-
+class MY_Model extends CI_Model {
 
 	public function __construct()
 	{
@@ -10,15 +9,11 @@ class Home extends MY_Controller {
 
 	}
 
-	 
-	public function index()
-	{
-
-		$this->load->view('admin/home');
-
-	}
-
-
+	
 
 	
+
 }
+
+/* End of file MY_Model.php */
+/* Location: ./application/models/MY_Model.php */
