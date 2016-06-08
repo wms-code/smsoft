@@ -137,6 +137,16 @@ class Employee extends CI_Controller {
 	}
 
 
+	public function master()
+	{
+		if($this->uri->segment(4))
+		{
+			$this->db->where('id',$this->uri->segment(4));
+			$query=$this->db->get('empinfo');
+			$data=$query->result()[0];
+		$this->load->view('admin/empmaster',$data);
+		}
+	}
 
 
 
