@@ -1,4 +1,4 @@
-<?php  include('include/head.php') ?>
+<?php  $this->load->view('include/head'); ?>
 <style type="text/css">
   .edu-img-disp {
   border: 5px solid #fff;
@@ -93,10 +93,10 @@
 <!-- Site wrapper -->
 <div class="wrapper">
 
-<?php  $this->load->view('admin/include/header'); ?>
+<?php  $this->load->view('include/header'); ?>
 
 
-<?php  $this->load->view('admin/include/sidebar'); ?>
+<?php  $this->load->view('include/sidebar'); ?>
 
   <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 302px;">
@@ -171,32 +171,20 @@
 </div>
 
 <div class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="col-md-3 col-sm-3 col-xs-6 edu-profile-label eduArLangCss">Title</div>
-    <div class="col-md-9 col-sm-9 col-xs-6 edu-profile-text"><?=$title?></div>
-  </div>
+  
 
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
-    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">First Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$first_name?></div>
-    </div>
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
-    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Last Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$last_name?></div>
-    </div>
-  </div>
-
-  <div class="col-md-12 col-xs-12 col-sm-12">
-    <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
-    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Middle Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$middle_name?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Name</div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$title?>&nbsp;<?=$first_name?>&nbsp;<?=$last_name?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Gender</div>
     <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$gender?></div>
     </div>
   </div>
+
+
 
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
@@ -642,6 +630,6 @@ $(document).ready(function(){
   <!-- /.content-wrapper -->
 
  
-<?php $this->load->view('admin/include/footer'); ?>
+<?php $this->load->view('include/footer'); ?>
 </body>
 </html>

@@ -13,10 +13,10 @@
 <!-- Site wrapper -->
 <div class="wrapper">
 
-<?php  $this->load->view('admin/include/header'); ?>
+<?php  $this->load->view('include/header'); ?>
 
 
-<?php  $this->load->view('admin/include/sidebar'); ?>
+<?php  $this->load->view('include/sidebar'); ?>
 
   <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 302px;">
@@ -147,6 +147,6 @@ EOF;
   <!-- /.content-wrapper -->
 
  
-<?php  $this->load->view('admin/include/footer'); ?>
+<?php  $this->load->view('include/footer'); ?>
 </body>
 </html>

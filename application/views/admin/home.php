@@ -1,13 +1,13 @@
-<?php  include('include/head.php') ?>
+<?php  $this->load->view('include/head'); ?>
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
 
-<?php  include('include/header.php') ?>
+<?php  $this->load->view('include/header.php') ?>
 
 
-<?php  include('include/sidebar.php') ?>
+<?php  $this->load->view('include/sidebar.php') ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -60,6 +60,6 @@
   <!-- /.content-wrapper -->
 
  
-<?php  include('include/footer.php') ?>
+<?php  $this->load->view('include/footer.php') ?>
 </body>
 </html>

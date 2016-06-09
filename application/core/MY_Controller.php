@@ -12,7 +12,7 @@ class MY_Controller extends CI_Controller {
         	$url = base_url('login');
         	header("Location: $url");
         }
-       elseif ($_SESSION['usertype']!="1") {
+       elseif ($_SESSION['usertype']!='admin') {
         	$url = base_url();
         	header("Location: $url");
         }

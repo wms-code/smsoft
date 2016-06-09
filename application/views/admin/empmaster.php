@@ -1,4 +1,4 @@
-<?php  include('include/head.php') ?>
+<?php  $this->load->view('include/head'); ?>
 <style type="text/css">
   .edu-img-disp {
   border: 5px solid #fff;
@@ -93,10 +93,10 @@
 <!-- Site wrapper -->
 <div class="wrapper">
 
-<?php  $this->load->view('admin/include/header'); ?>
+<?php  $this->load->view('include/header'); ?>
 
 
-<?php  $this->load->view('admin/include/sidebar'); ?>
+<?php  $this->load->view('include/sidebar'); ?>
 
   <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 302px;">
@@ -687,6 +687,6 @@ $(document).ready(function(){
   <!-- /.content-wrapper -->
 
  
-<?php $this->load->view('admin/include/footer'); ?>
+<?php $this->load->view('include/footer'); ?>
 </body>
 </html>

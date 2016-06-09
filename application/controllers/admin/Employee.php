@@ -45,7 +45,7 @@ class Employee extends MY_Controller {
 			$data['designation']=$this->input->post('designation');			
 			$data['experience']=$this->input->post('experience');
 			$data['salary']=$this->input->post('salary');
-			$data['entry_by']="hi";
+			$data['entry_by']=$_SESSION['username'];
 
 			
 			$this->db->insert('empinfo', $data);
@@ -103,7 +103,7 @@ class Employee extends MY_Controller {
 			$data['designation']=$this->input->post('designation');			
 			$data['experience']=$this->input->post('experience');
 			$data['salary']=$this->input->post('salary');
-			$data['update_by']="hi";
+			$data['update_by']=$_SESSION['username'];
 
 			$emp_id=$this->uri->segment(4);
 			$this->db->where('emp_id',$emp_id);
