@@ -101,48 +101,63 @@
   <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 302px;">
      <section class="content-header">
-        <h1><i class="fa fa-user"></i> Student  <small> Profile </small></h1>
+        <h1><i class="fa fa-plus-square"></i> Students List <small> All Students </small></h1>
         <ul class="breadcrumb"><li><a href="<?php echo base_url() ?>admin"><i class="fa fa-home"></i>Home</a></li>
 <li><a href="<?php echo base_url() ?>admin/student">Student</a></li>
 <li><a href="<?php echo base_url() ?>admin/student/plist">Students List</a></li>
 </ul>    </section>
 
-   <section class="content edu-user-profile" style="min-height: 567px;">
+   <section class="content">
+    
+      <!-- Default box -->
+      <div class="box">
+            <div class="box-header">
+              <table>
+              <tr><td width="90%"><h3 class="box-title">Students List</h3></td>
+              <td width="10%">
+              <a href="<?php echo base_url() ?>admin/student/create" accesskey="n">Add New Record</a>
+              </td></tr>
+              </table>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <section class="content edu-user-profile" style="min-height: 567px;">
 <div class="row">
   <div class="col-lg-3 table-responsive edu-pf-border  eduArLangCss" style="margin-bottom:15px">
     <div class="col-md-12 text-center">
       <img class="img-circle edu-img-disp" src="<?php echo base_url() ?>/dist/img/no-photo.png" alt="No Image">    <div class="photo-edit">
             <a class="photo-edit-icon" href="/edu/index.php?r=student%2Fstu-master%2Fstu-photo&amp;sid=16" title="Change Profile Picture" data-toggle="modal" data-target="#photoup"><i class="fa fa-pencil"></i></a>          </div>
     </div>
+    <?php foreach($query->result() as $row) ?>
     <table class="table table-striped">
       <tbody><tr>
         <th>Student ID</th>
-        <td><?= $roll_no ?></td>
+        <td><?= $row->roll_no ?></td>
       </tr>
       <tr>
         <th>Name</th>
-        <td><?= $first_name ?> <?=$last_name ?></td>
+        <td><?= $row->first_name ?> <?=$row->last_name ?></td>
       </tr>
       <tr>
         <th>Course</th>
-        <td><?=$course ?></td>
+        <td><?=$row->course ?></td>
       </tr>
       <tr>
         <th>Degree</th>
-        <td><?=$degree?></td>
+        <td><?=$row->degree?></td>
       </tr>
       <tr>
         <th>Email ID</th>
-        <td><?=$email_id?></td>
+        <td><?=$row->email_id?></td>
       </tr>
       <tr>
         <th>Mobile No</th>
-        <td><?=$mobile?></td>
+        <td><?=$row->mobile?></td>
       </tr>
       <tr>
         <th>Status</th>
         <td>
-                    <span class="label label-success"><?=$status?></span>
+                    <span class="label label-success"><?=$row->status?></span>
                   </td>
       </tr>
     </tbody></table>
@@ -176,11 +191,11 @@
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$title?>&nbsp;<?=$first_name?>&nbsp;<?=$last_name?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$row->title?>&nbsp;<?=$row->first_name?>&nbsp;<?=$row->last_name?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Gender</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$gender?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$row->gender?></div>
     </div>
   </div>
 
@@ -189,7 +204,7 @@
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Date of Birth</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?php echo date("d-m-Y",strtotime($dob)); ?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?php echo date("d-m-Y",strtotime($row->dob)); ?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Nationality</div>
@@ -201,7 +216,7 @@
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Admission Category</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$adm_category?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$row->adm_category?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Religion</div>
@@ -243,7 +258,7 @@
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Course</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$course?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$row->course?></div>
   </div>
 </div>
 
@@ -257,21 +272,21 @@
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Section</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$section?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$row->section?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Admission Date</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?php echo date("d-m-Y",strtotime($adm_date)); ?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?php echo date("d-m-Y",strtotime($row->adm_date)); ?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Student Status</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$status?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$row->status?></div>
   </div>
 </div>
 
@@ -609,8 +624,9 @@ $(document).ready(function(){
 </div>
 
 <div class="box box-solid">
-     <div class="box-body table-responsive no-padding">
+<div class="box-body table-responsive no-padding">
 <div id="w1"><div id="w2" class="grid-view">
+
 <table class="table table-striped table-bordered"><thead>
 <tr><th>#</th><th><a class="desc" href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_id" data-sort="fees_pay_tran_id">Receipt No.</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_date" data-sort="fees_pay_tran_date">Payment Date</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_collect_id" data-sort="fees_pay_tran_collect_id">Fees Collect Name</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_mode" data-sort="fees_pay_tran_mode">Payment Mode</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_cheque_no" data-sort="fees_pay_tran_cheque_no">Cheque No</a></th><th><a href="/edu/index.php?r=student%2Fstu-master%2Fview&amp;id=16&amp;sort=fees_pay_tran_amount" data-sort="fees_pay_tran_amount">Amount</a></th></tr>
 </thead>
@@ -620,18 +636,14 @@ $(document).ready(function(){
 </div></div>     </div>
 </div>
 </section>
-
-<!-----End student payment history block----->
-  
+            </div>
+            <!-- /.box-body -->
       </div>
-        </div><div class="panel-group responsive visible-xs visible-sm" id="collapse-profileTab"><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse-profileTab" href="#collapse-personal" aria-expanded="true"><i class="fa fa-street-view"></i> Personal</a></h4></div><div id="collapse-personal" class="panel-collapse collapse in" aria-expanded="true"></div></div><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#collapse-profileTab" href="#collapse-academic" aria-expanded="false"><i class="fa fa-graduation-cap"></i> Academic</a></h4></div><div id="collapse-academic" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;"></div></div><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#collapse-profileTab" href="#collapse-guardians" aria-expanded="false"><i class="fa fa-user"></i> Guardians</a></h4></div><div id="collapse-guardians" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;"></div></div><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#collapse-profileTab" href="#collapse-address" aria-expanded="false"><i class="fa fa-home"></i> Address</a></h4></div><div id="collapse-address" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;"></div></div><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#collapse-profileTab" href="#collapse-documents" aria-expanded="false"><i class="fa fa-file-text"></i> Documents</a></h4></div><div id="collapse-documents" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;"></div></div><div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#collapse-profileTab" href="#collapse-fees" aria-expanded="false"><i class="fa fa-inr"></i> Fees</a></h4></div><div id="collapse-fees" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;"></div></div></div>
-  </div>
-     </div> <!---End Row Div--->
-</section>
+          <!-- /.box -->
+    </section>
 </div>
   <!-- /.content-wrapper -->
 
  
 <?php $this->load->view('include/footer'); ?>
 </body>
-</html>

@@ -13,9 +13,14 @@ class Home extends MY_Controller {
 	 
 	public function index()
 	{
-
+		$roll_no=$_SESSION['username'];
+		$this->db->where('roll_no',$roll_no);
 		$data['query']=$this->db->get('stuinfo');
-		$this->load->view('admin/studentlist',$data);;
+
+		$this->db->where('roll_no',$roll_no);
+		$data['fees']=$this->db->get('fee_details');
+
+		$this->load->view('student/studentmaster',$data);;
 
 	}
 

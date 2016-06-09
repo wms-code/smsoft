@@ -12,11 +12,16 @@ class MY_Controller extends CI_Controller {
         	$url = base_url('login');
         	header("Location: $url");
         }
-       elseif ($_SESSION['usertype']!='admin') {
-        	$url = base_url();
-        	header("Location: $url");
-        }
 
+       if($this->uri->segment(1)!=$_SESSION['usertype'])
+       {
+       	$this->session->unset_userdata('username');
+       	$this->session->unset_userdata('usertype');
+		$this->session->sess_destroy();
+		$url=base_url('login');
+		header("Location: $url");
+       }
+       
 	}
 
 	public function index()

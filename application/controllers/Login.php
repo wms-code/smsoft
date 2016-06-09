@@ -34,6 +34,7 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('usertype');
 		$this->session->sess_destroy();
 		$url=base_url('login');
 		header("Location: $url");
