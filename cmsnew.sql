@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2016 at 11:30 AM
+-- Generation Time: Jun 11, 2016 at 08:22 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -73,6 +73,13 @@ CREATE TABLE `banks` (
   `update_by` varchar(30) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `banks`
+--
+
+INSERT INTO `banks` (`bank_id`, `bank_name`, `bank_alias`, `entry_by`, `entry_date`, `update_by`, `update_date`) VALUES
+(0, 'IDBI Bank', 'idbi', 'test_user', '2016-06-11 06:13:20', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -182,6 +189,7 @@ CREATE TABLE `empinfo` (
   `app_category` varchar(40) NOT NULL,
   `degree` varchar(10) NOT NULL,
   `course` varchar(10) NOT NULL,
+  `status` varchar(10) DEFAULT 'inactive',
   `app_date` date NOT NULL,
   `designation` varchar(40) NOT NULL,
   `experience` varchar(2) NOT NULL,
@@ -196,11 +204,11 @@ CREATE TABLE `empinfo` (
 -- Dumping data for table `empinfo`
 --
 
-INSERT INTO `empinfo` (`id`, `emp_id`, `title`, `first_name`, `middle_name`, `last_name`, `gender`, `email_id`, `mobile`, `dob`, `marital_status`, `address`, `city`, `nationality_name`, `country`, `app_category`, `degree`, `course`, `app_date`, `designation`, `experience`, `salary`, `entry_by`, `entry_date`, `update_by`, `update_date`) VALUES
-(2, 1, 'Mr.', 'dsg', 'dg', 'dgdg', 'Male', 'dgdgd@dgd.in', 'sfs', '2016-05-30', 'Un Married', 'sfs', 'sfs', '', 'Nepal', '', '', 'sd', '2016-06-14', '', 'sf', 's', 'hi', '2016-06-07 08:28:13', 'hi', '2016-06-07 09:30:08'),
-(3, 27, 'Mr.', 'dsg', 'dg', 'dgdg', 'Male', 'dgdgd@dgd.in', 'sfs', '2016-05-30', 'Un Married', 'sfs', 'sfs', '', 'Nepal', '', '', 'sd', '2016-06-14', '', 'sf', 's', 'hi', '2016-06-07 08:28:25', '', '0000-00-00 00:00:00'),
-(4, 271, 'Mr.', 'dsg', 'dg', 'dgdg', 'Male', 'dgdgd@dgd.in', 'sfs', '2016-05-30', 'Un Married', 'sfs', 'sfs', '', 'Nepal', '', '', 'sd', '2016-06-14', '', 'sf', 's', 'hi', '2016-06-07 08:30:09', '', '0000-00-00 00:00:00'),
-(5, 22, 'Mr.', 'f', 'f', 'f', 'Male', 'f', 'f', '2016-06-01', 'Married', 'f', 'f', '', 'fg', '', '', 'sd', '2016-02-09', '', 'f', 'f', '', '2016-06-07 09:15:17', 'hi', '2016-06-07 09:21:11');
+INSERT INTO `empinfo` (`id`, `emp_id`, `title`, `first_name`, `middle_name`, `last_name`, `gender`, `email_id`, `mobile`, `dob`, `marital_status`, `address`, `city`, `nationality_name`, `country`, `app_category`, `degree`, `course`, `status`, `app_date`, `designation`, `experience`, `salary`, `entry_by`, `entry_date`, `update_by`, `update_date`) VALUES
+(2, 1, 'Mr.', 'dsg', 'dg', 'dgdg', 'Male', 'dgdgd@dgd.in', 'sfs', '2016-05-30', 'Un Married', 'sfs', 'sfs', '', 'Nepal', '', '', 'sd', 'inactive', '2016-06-14', '', 'sf', 's', 'hi', '2016-06-07 08:28:13', 'hi', '2016-06-07 09:30:08'),
+(3, 27, 'Mr.', 'dsg', 'dg', 'dgdg', 'Male', 'dgdgd@dgd.in', 'sfs', '2016-05-30', 'Un Married', 'sfs', 'sfs', '', 'Nepal', '', '', 'sd', 'inactive', '2016-06-14', '', 'sf', 's', 'hi', '2016-06-07 08:28:25', '', '0000-00-00 00:00:00'),
+(4, 271, 'Mr.', 'dsg', 'dg', 'dgdg', 'Male', 'dgdgd@dgd.in', 'sfs', '2016-05-30', 'Un Married', 'sfs', 'sfs', '', 'Nepal', '', '', 'sd', 'inactive', '2016-06-14', '', 'sf', 's', 'hi', '2016-06-07 08:30:09', '', '0000-00-00 00:00:00'),
+(5, 22, 'Mr.', 'f', 'f', 'f', 'Male', 'f', 'f', '2016-06-01', 'Married', 'f', 'f', '', 'fg', '', '', 'sd', 'inactive', '2016-02-09', '', 'f', 'f', '', '2016-06-07 09:15:17', 'hi', '2016-06-07 09:21:11');
 
 -- --------------------------------------------------------
 
@@ -252,7 +260,7 @@ CREATE TABLE `fee_details` (
 
 INSERT INTO `fee_details` (`roll_no`, `total_fees`, `hostel_fee`, `transport_fee`, `college_fee`, `tution_fee`, `fee`, `other_fee`, `entry_by`, `entry_date`, `update_by`, `update_date`) VALUES
 ('rfteww', '15', '1', '11', '1', '1', 'svfsd', '1', 'hi', '2016-06-06 22:16:52', '', '2016-06-06 22:32:07'),
-('rfteww4', '15', '3', '2', '1', '4', 'check', '5', 'hi', '2016-06-06 22:21:10', '', '2016-06-06 22:28:32'),
+('rfteww4', '15', '3', '2', '1', '4', 'check', '5', 'admin', '2016-06-06 22:21:10', '', '2016-06-11 03:47:23'),
 ('wr', '0', '', '', '', '', '', '', 'hi', '2016-06-06 22:35:31', '', '2016-06-06 22:35:31');
 
 -- --------------------------------------------------------
@@ -304,7 +312,32 @@ CREATE TABLE `stuinfo` (
 --
 
 INSERT INTO `stuinfo` (`id`, `roll_no`, `adm_category`, `adm_date`, `title`, `first_name`, `middle_name`, `last_name`, `dob`, `gender`, `mobile`, `email_id`, `entry_level`, `degree`, `course`, `section`, `entry_by`, `entry_date`, `update_by`, `update_date`) VALUES
-(1, 'rfteww4', 'dfasd', '2016-06-01', 'Mr.', 'chinna', 'thambi', 'ss', '0000-00-00', 'Male', '8056617261', 'chinnathambi4u@gmail.com', 'df', 'sf', 'sd', '3', 'hi', '2016-06-06 22:21:10', '', '2016-06-07 08:56:11');
+(1, 'stu123', 'dfasd', '2016-06-01', 'Mr.', 'chinna', 'thambi', 'ss', '1986-06-07', 'Male', '8056617261', 'chinnathambi4u@gmail.com', 'df', 'sf', 'sd', '3', 'admin', '2016-06-06 22:21:10', '', '2016-06-11 04:12:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `usertype` varchar(10) NOT NULL,
+  `entry_by` varchar(30) NOT NULL,
+  `entry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_by` varchar(30) NOT NULL,
+  `update_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `password`, `usertype`, `entry_by`, `entry_date`, `update_by`, `update_date`) VALUES
+(1, 'admin', 'admin', 'admin', '', '2016-06-11 03:35:37', '', '0000-00-00 00:00:00'),
+(3, 'stu123', 'student', 'student', '', '2016-06-11 04:12:53', '', '2016-06-11 04:12:53');
 
 --
 -- Indexes for dumped tables
@@ -379,6 +412,13 @@ ALTER TABLE `stuinfo`
   ADD UNIQUE KEY `roll_no` (`roll_no`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -416,7 +456,7 @@ ALTER TABLE `designation`
 -- AUTO_INCREMENT for table `empinfo`
 --
 ALTER TABLE `empinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `entry_level`
 --
@@ -432,6 +472,11 @@ ALTER TABLE `nationalities`
 --
 ALTER TABLE `stuinfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
