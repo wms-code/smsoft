@@ -1,4 +1,4 @@
-<?php  $this->load->view('admin/include/head'); ?>
+<?php  $this->load->view('include/head'); ?>
 <?php if ($this->uri->segment(4)=='view') { ?>
 
 <script type="text/javascript">

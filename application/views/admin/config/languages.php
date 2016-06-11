@@ -1,4 +1,4 @@
-<?php  $this->load->view('admin/include/head'); ?>
+<?php  $this->load->view('include/head'); ?>
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
 <!-- Site wrapper -->

@@ -1,4 +1,4 @@
-<?php  $this->load->view('admin/include/head'); ?>
+<?php  $this->load->view('include/head'); ?>
 
 <script type="text/javascript">
     $(window).load(function(){
