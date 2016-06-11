@@ -52,12 +52,21 @@ class Student extends MY_Controller {
 			$data1['other_fee']=$this->input->post('other_fee');
 			$data1['total_fees']=$data1['college_fee']+$data1['hostel_fee']+$data1['transport_fee']+$data1['tution_fee']+$data1['other_fee'];
 
+
+
+			$data2['username']=$this->input->post('roll_no');
+			$data2['password']="password";
+			$data2['usertype']="student";
+			$data2['entry_by']=$_SESSION['username'];
+
 			
 			$this->db->insert('stuinfo', $data);
 
 			$this->db->insert('fee_details', $data1);
 
-			$url=base_url('admin/student/plist');
+			$this->db->insert('users', $data2);
+
+			$url=base_url('admin/student');
 			header("location:$url");
 		}
 		else {
@@ -80,7 +89,7 @@ class Student extends MY_Controller {
 		$roll_no=$this->uri->segment(4);
 		$this->db->where('roll_no',$roll_no);
 		$this->db->delete('stuinfo');
-		$url = base_url('admin/student/plist');
+		$url = base_url('admin/student');
         header("Location: $url");
 	}
 
@@ -108,7 +117,7 @@ class Student extends MY_Controller {
 			$data['entry_by']=$_SESSION['username'];
 
 			$data1['entry_by']=$_SESSION['username'];
-			$data1['roll_no']=$this->input->post('roll_no');
+			$data1['roll_no']=$roll_no;
 			$data1['college_fee']=$this->input->post('college_fee');
 			$data1['hostel_fee']=$this->input->post('hostel_fee');
 			$data1['transport_fee']=$this->input->post('transport_fee');
@@ -125,7 +134,7 @@ class Student extends MY_Controller {
 			$this->db->where('roll_no',$roll_no);
 			$this->db->update('fee_details', $data1);
 
-			$url = base_url('admin/student/plist');
+			$url = base_url('admin/student');
 	        header("Location: $url");
 	    }
 

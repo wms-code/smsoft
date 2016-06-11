@@ -104,7 +104,7 @@
         <h1><i class="fa fa-plus-square"></i> Students List <small> All Students </small></h1>
         <ul class="breadcrumb"><li><a href="<?php echo base_url() ?>admin"><i class="fa fa-home"></i>Home</a></li>
 <li><a href="<?php echo base_url() ?>admin/student">Student</a></li>
-<li><a href="<?php echo base_url() ?>admin/student/plist">Students List</a></li>
+<li><a href="<?php echo base_url() ?>admin/student">Students List</a></li>
 </ul>    </section>
 
    <section class="content">
@@ -115,7 +115,7 @@
               <table>
               <tr><td width="90%"><h3 class="box-title">Students List</h3></td>
               <td width="10%">
-              <a href="<?php echo base_url() ?>admin/student/create" accesskey="n">Add New Record</a>
+             
               </td></tr>
               </table>
             </div>
@@ -128,36 +128,35 @@
       <img class="img-circle edu-img-disp" src="<?php echo base_url() ?>/dist/img/no-photo.png" alt="No Image">    <div class="photo-edit">
             <a class="photo-edit-icon" href="/edu/index.php?r=student%2Fstu-master%2Fstu-photo&amp;sid=16" title="Change Profile Picture" data-toggle="modal" data-target="#photoup"><i class="fa fa-pencil"></i></a>          </div>
     </div>
-    <?php foreach($query->result() as $row) ?>
     <table class="table table-striped">
       <tbody><tr>
         <th>Student ID</th>
-        <td><?= $row->roll_no ?></td>
+        <td><?= $query->roll_no ?></td>
       </tr>
       <tr>
         <th>Name</th>
-        <td><?= $row->first_name ?> <?=$row->last_name ?></td>
+        <td><?= $query->first_name ?> <?=$query->last_name ?></td>
       </tr>
       <tr>
         <th>Course</th>
-        <td><?=$row->course ?></td>
+        <td><?=$query->course ?></td>
       </tr>
       <tr>
         <th>Degree</th>
-        <td><?=$row->degree?></td>
+        <td><?=$query->degree?></td>
       </tr>
       <tr>
         <th>Email ID</th>
-        <td><?=$row->email_id?></td>
+        <td><?=$query->email_id?></td>
       </tr>
       <tr>
         <th>Mobile No</th>
-        <td><?=$row->mobile?></td>
+        <td><?=$query->mobile?></td>
       </tr>
       <tr>
         <th>Status</th>
         <td>
-                    <span class="label label-success"><?=$row->status?></span>
+                    <span class="label label-success"><?php  //$query->status ?></span>
                   </td>
       </tr>
     </tbody></table>
@@ -191,11 +190,11 @@
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding edu-bg-row">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Name</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$row->title?>&nbsp;<?=$row->first_name?>&nbsp;<?=$row->last_name?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$query->title?>&nbsp;<?=$query->first_name?>&nbsp;<?=$query->last_name?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Gender</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$row->gender?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$query->gender?></div>
     </div>
   </div>
 
@@ -204,7 +203,7 @@
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Date of Birth</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?php echo date("d-m-Y",strtotime($row->dob)); ?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?php echo date("d-m-Y",strtotime($query->dob)); ?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Nationality</div>
@@ -216,7 +215,7 @@
   <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Admission Category</div>
-    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$row->adm_category?></div>
+    <div class="col-lg-6 col-xs-6 edu-profile-text"><?=$query->adm_category?></div>
     </div>
     <div class="col-lg-6 col-sm-6 col-xs-12 no-padding">
     <div class="col-lg-6 col-xs-6 edu-profile-label eduArLangCss">Religion</div>
@@ -258,7 +257,7 @@
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Course</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$row->course?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$query->course?></div>
   </div>
 </div>
 
@@ -272,21 +271,21 @@
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Section</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$row->section?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$query->section?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Admission Date</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?php echo date("d-m-Y",strtotime($row->adm_date)); ?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?php echo date("d-m-Y",strtotime($query->adm_date)); ?></div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="col-md-4 col-xs-4 edu-profile-label eduArLangCss">Student Status</div>
-  <div class="col-md-8 col-xs-8 edu-profile-text"><?=$row->status?></div>
+  <div class="col-md-8 col-xs-8 edu-profile-text"><?php //$query->status?></div>
   </div>
 </div>
 
