@@ -15,7 +15,7 @@ class Login extends CI_Controller {
 				$password = $this->input->post('password');
 				$this->db->where('username', $username);
 				$this->db->where('password', $password);			
-				$res = $this->db->get('user');
+				$res = $this->db->get('users');
 				if($res->num_rows() == 1){
 					$userid=$res->result()[0]->user_id;
 					$usertype=$res->result()[0]->usertype;
